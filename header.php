@@ -19,11 +19,11 @@
 	<meta name="revisit-after" content="2 days">
 	<meta name="robots" content="index,nofollow">
 
-	<link href="./img/favicon.png" rel="icon" type="image/png">
+	<link href="<?php RT; ?>img/favicon.png" rel="icon" type="image/png">
 	<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&amp;text=YAML4%20CSS%20Framework" rel="stylesheet" type="text/css"/>
 	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700" rel="stylesheet" type="text/css">
 	<link href="<?php RT; ?>css/layout.css" rel="stylesheet" type="text/css"/>
-	<link href="./js/snippet/snippet.css" rel="stylesheet" type="text/css"/>
+	<link href="<?php RT; ?>js/snippet/snippet.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body id="yaml-top" class="doc">
