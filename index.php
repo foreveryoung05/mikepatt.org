@@ -12,8 +12,17 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 			<div class="ym-grid linearize-level-1">
 				<div class="ym-g33 ym-gl">
 					<div class="ym-gbox-left">
-						<h3>Current Courses</h3>
-
+						<?php $currSem = "2013A"; $semDict = convertSem($currSem);
+						$seas = $semDict["season"]; $year = $semDict["year"]; ?>
+						<h3>Current Courses <span class="subh"><?php echo $seas . " '" . $year; ?></span></h3>
+						<ul>
+						<?php
+						$currCourses = mysql_query("SELECT DISTINCT * FROM course, term WHERE cnum=num AND term='" . $currSem . "' ORDER BY name");
+						while($row = mysql_fetch_array($currCourses)){ ?>
+							<li><?php echo $row["cnum"] . " - " . $row["name"]; ?></li>
+						<?php
+						} ?>
+						</ul>
 					</div>
 				</div>
 				<div class="ym-g33 ym-gl">

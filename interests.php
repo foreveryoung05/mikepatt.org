@@ -5,13 +5,13 @@
 <!-- get the TP files -->
 <?php 
 function getDirArray($dir){
-$dir = opendir("./tps");
-while ($fileName = readdir($dir)){
+$dir2 = opendir($dir);
+while ($fileName = readdir($dir2)){
 	if(substr("$fileName", 0, 1) != "."){
 		$dirArray[] = $fileName;	
 	}
 } 
-closedir($dir);
+closedir($dir2);
 return $dirArray;
 }
 
@@ -89,7 +89,7 @@ function printDir($dir, $sort, $frame){
 							<nav class="ym-vlist">
 								<h4 class="ym-vtitle">Editions</h4>
 								<ul>
-									<?php $dirArray = printDir("./tps", "r", "print") ?>		
+									<?php $dirArray = printDir("./tps/editions", "r", "print") ?>		
 								</ul>
 							</nav>
 						</div>
@@ -100,7 +100,7 @@ function printDir($dir, $sort, $frame){
 						<div class="jquery_tabs">
 							<h5 id="printTab" class="tabhead" tabindex="-1">Print</h5>
 							<div class="tab-content">
-				    			<iframe name="print" width="100%" height="500" src="<?php echo "./tps/" . $dirArray[0]; ?>"></iframe>								
+				    			<iframe name="print" width="100%" height="500" src="<?php echo RT . "tps/editions/" . $dirArray[0]; ?>"></iframe>								
 							</div>						
 							<h5 id="digitalTab" class="tabhead" tabindex="-1">Digital</h5>
 							<div class="tab-content">
