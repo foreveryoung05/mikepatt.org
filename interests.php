@@ -5,14 +5,14 @@
 <!-- get the TP files -->
 <?php 
 function getDirArray($dir){
-$dir2 = opendir($dir);
-while ($fileName = readdir($dir2)){
-	if(substr("$fileName", 0, 1) != "."){
-		$dirArray[] = $fileName;	
-	}
-} 
-closedir($dir2);
-return $dirArray;
+	$dir2 = opendir($dir);
+	while ($fileName = readdir($dir2)){
+		if(substr("$fileName", 0, 1) != "."){
+			$dirArray[] = $fileName;	
+		}
+	} 
+	closedir($dir2);
+	return $dirArray;
 }
 
 function printDir($dir, $sort, $frame){
@@ -110,50 +110,7 @@ function printDir($dir, $sort, $frame){
 					</div>
 				</div>
 			</div>
-<!--
-			<h2 id="Dogs" tabindex="-1">Working Dog Center</h2>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						&nbsp;
-					</div>
-				</div>
-				<div class="ym-g75 ym-gl">
-					<div class="ym-gbox-right">
-						<br />
-						<iframe width="100%" height="500" name="content" id="content" frameborder="0" src="">
-						<p>
-						<a href="">
-						Your browser does not support iframes. Click to view.
-						</a>
-						</p>
-						</iframe>
-					</div>
-				</div>
-			</div>
 
-			<h2 id="Dreams" tabindex="-1">Lucid Dreams</h2>
-			<div class="ym-grid linearize-level-1">
-				<h3 id="" tabindex="-1"></h3>
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						&nbsp;
-					</div>
-				</div>
-				<div class="ym-g75 ym-gl">
-					<div class="ym-gbox-right">
-						<br />
-						<iframe width="100%" height="500" name="content" id="content" frameborder="0" src="">
-						<p>
-						<a href="">
-						Your browser does not support iframes. Click to view.
-						</a>
-						</p>
-						</iframe>
-					</div>
-				</div>
-			</div>
--->
 		</div>
 	</div>
 </div>
