@@ -41,8 +41,15 @@
 				<h1 style="color:#FFFFFF;">Mike Patterson</h1>
 				<h2><span itemprop="role">Computer Scientist</span></h2>
 			</hgroup>
-			<p>Under Construction</p>
 			<p>A passionate coder with an interest in <em>startups</em>, <em>search</em> and <em>security</em></p>
+			<p>This website is 60% complete.</p>
+			<div class="ym-grid linearize-level-1">
+				<div class="ym-g20 ym-gl">&nbsp;</div>
+				<div class="meter ym-g60 ym-gl">
+					<span style="width: 60%"></span>
+				</div>
+				<div class="ym-g20 ym-gr">&nbsp;</div>
+			</div>
 		</div>
 	</div>
 </header>

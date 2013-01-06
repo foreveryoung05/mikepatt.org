@@ -5,9 +5,7 @@
 				<ul>
 					<li><a href="#ReadingList">My Reading List</a></li>
 					<li><a href="#TheAvatars">The Avatars</a></li>
-					<li><a href="#TheTP">The Toilet Paper</a></li>
-					<li><a href="#Dogs">Working Dog Center</a></li>	
-					<li><a href="#Dreams">Lucid Dreams</a></li>						
+					<li><a href="#TheTP">The Toilet Paper</a></li>				
 				</ul>
 			</div>
 		</div>

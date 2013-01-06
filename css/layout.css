@@ -30,4 +30,7 @@
 @import url(yaml/print/print.css);
 
 /* import social bar styling */
-@import url(socialbar.css)
+@import url(socialbar.css);
+
+/* import progress bar styling */
+@import url(progressbars.css);

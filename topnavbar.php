@@ -13,11 +13,32 @@ function setActive($pageTitle, $index){
 		<div class="ym-wbox">
 			<div class="mnav">
 				<ul class="ym-grid ym-equalize linearize-level-2">
-					<li class="ym-g20 ym-gl <?php setActive($pageTitle, 1); ?>"><a href="./"><!--"http://www.mikepatt.org"-->Home</a></li>
-					<li class="ym-g20 ym-gl <?php setActive($pageTitle, 2); ?>"><a href="./courses.php">Courses <span>Current &amp; Past</span></a></li>
-					<li class="ym-g20 ym-gl <?php setActive($pageTitle, 3); ?>"><a href="./projects.php">Projects <span>Coursework &amp; Self Interest</span></a></li>
-					<li class="ym-g20 ym-gl <?php setActive($pageTitle, 4); ?>"><a href="./clubs.php">Clubs <span>VSA, WiCS, PLBD, STWing</span></a></li>
-					<li class="ym-g20 ym-gr <?php setActive($pageTitle, 5); ?>"><a href="./interests.php">Interests <span>Reading, Writing, Animals, Dreams</span></a>
+					<li class="ym-g20 ym-gl <?php setActive($pageTitle, 1); ?>">
+						<a href="./"><!--"http://www.mikepatt.org"-->
+						Home
+						</a>
+					</li>
+					<li class="ym-g20 ym-gl <?php setActive($pageTitle, 2); ?>">
+						<a href="./courses.php">
+						Courses 
+						<span>Current &amp; Past</span>
+						</a>
+					</li>
+					<li class="ym-g20 ym-gl <?php setActive($pageTitle, 3); ?>">
+						<a href="./projects.php">
+						Projects 
+						<span>Coursework &amp; Self Interest</span>
+						</a>
+					</li>
+					<li class="ym-g20 ym-gl <?php setActive($pageTitle, 4); ?>">
+						<a href="./clubs.php">Clubs 
+						<span>VSA, WiCS, PLBD, STWing</span>
+						</a>
+					</li>
+					<li class="ym-g20 ym-gr <?php setActive($pageTitle, 5); ?>">
+						<a href="./interests.php">Interests 
+						<span>Reading, Writing</span>
+						</a>
 					</li>
 				</ul>
 			</div>

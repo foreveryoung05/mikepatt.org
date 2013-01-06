@@ -8,7 +8,7 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 <div id="main" class="ym-clearfix" role="main">
 	<div class="ym-wrapper">
 		<div class="ym-wbox">
-			
+		
 			<div class="ym-grid linearize-level-1">
 				<div class="ym-g33 ym-gl">
 					<div class="ym-gbox-left">
