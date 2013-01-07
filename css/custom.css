@@ -1,0 +1,6 @@
+span.anchor { 
+    display: block;
+    height: 47px;
+    margin-top: -47px;
+    visibility: hidden;
+}

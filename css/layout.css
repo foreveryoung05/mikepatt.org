@@ -29,6 +29,9 @@
 /* import print layout | Druck-Layout einbinden */
 @import url(yaml/print/print.css);
 
+/* import custom styling */
+@import url(custom.css);
+
 /* import social bar styling */
 @import url(socialbar.css);
 

@@ -13,21 +13,28 @@ function isCourse($string){
 function printSem($sem){
 	$semDict = array("A" => "Spring", "B" => "Summer", "C" => "Fall");
 	$seas = $semDict[substr($sem, -1)]; $year = substr($sem, -3, 2);
-	$courses = mysql_query("SELECT DISTINCT * FROM course, term WHERE num=cnum and term='" . $sem . "' ORDER BY term DESC"); ?>
+	$courses = mysql_query("SELECT DISTINCT * 
+						   FROM course, term 
+						   WHERE num=cnum and term='" . $sem . "' ORDER BY term DESC"); ?>
 	<h2 id="<?php echo $seas . $year; ?>" tabindex="-1"><?php echo $seas . " '" . $year; ?></h2>
-	<?php while($row = mysql_fetch_array($courses)) { ?>
+	<?php while($course = mysql_fetch_array($courses)) { 
+		$num = $course["num"]; $name = $course["name"]; $desc = $course["desc"];
+		?>
 		<div class="ym-grid linearize-level-1">
-			<h3 id="<?php echo $row['num']; ?>" tabindex="-1"><?php echo $row['name']; ?></h3>
+			<span class="anchor" id="<?php echo $num; ?>"></span>
+			<h3  tabindex="-1"><?php echo $name; ?></h3>
 			<div class="ym-g25 ym-gl">
 				<div class="ym-gbox-left">
-					<h3><span class="subh"><?php echo $row['num']; ?></span></h3>
+					<h3><span class="subh"><?php echo $num; ?></span></h3>
 					<span class="label">pre-reqs: <br />
-						<?php $prereqs = mysql_query("SELECT DISTINCT * FROM prereqs WHERE cnum='" . $row['num'] . "' ORDER BY cnum");
-						while($row2 = mysql_fetch_array($prereqs)) { $prereq = $row2['prereq']; ?>
-							<?php if(isCourse($prereq)){ ?>
-								&nbsp;&nbsp;<a href="#<?php echo $prereq; ?>"><?php echo $prereq; ?></a><br />
+						<?php $prereqs = mysql_query("SELECT DISTINCT * 
+								                     FROM prereqs 
+								                     WHERE cnum='" . $num . "' ORDER BY prereq");
+						while($prereq = mysql_fetch_array($prereqs)) { $prname = $prereq['prereq']; ?>
+							<?php if(isCourse($prname)){ ?>
+								&nbsp;&nbsp;<a href="#<?php echo $prname; ?>"><?php echo $prname; ?></a><br />
 							<?php } else{ ?>
-								&nbsp;&nbsp;<?php echo $prereq; ?><br />
+								&nbsp;&nbsp;<?php echo $prname; ?><br />
 						<?php }
 						} ?>
 					</span>
@@ -36,7 +43,7 @@ function printSem($sem){
 			<div class="ym-g75 ym-gr">
 				<div class="ym-gbox-right">
 					<p>
-					<?php echo $row['desc']; ?>	
+					<?php echo $desc; ?>	
 					</p>
 				</div>
 			</div>

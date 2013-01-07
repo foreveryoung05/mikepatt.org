@@ -42,11 +42,11 @@
 				<h2><span itemprop="role">Computer Scientist</span></h2>
 			</hgroup>
 			<p>A passionate coder with an interest in <em>startups</em>, <em>search</em> and <em>security</em></p>
-			<p>This website is 60% complete.</p>
+			<p>This website is 87% complete.</p>
 			<div class="ym-grid linearize-level-1">
 				<div class="ym-g20 ym-gl">&nbsp;</div>
 				<div class="meter ym-g60 ym-gl">
-					<span style="width: 60%"></span>
+					<span style="width: 87%"></span>
 				</div>
 				<div class="ym-g20 ym-gr">&nbsp;</div>
 			</div>

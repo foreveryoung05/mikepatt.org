@@ -7,127 +7,46 @@
 	<div class="ym-wrapper">
 		<div class="ym-wbox">
 
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g50 ym-gl">
-					<h2 id="VSA" tabindex="-1">Vietnamese Students' Association</h2>
-				</div>
-				<div class="ym-g50 ym-gr rtl">
-					<h2 id="0912" tabindex="-1">Jan. 2010 - Present</h2>
-				</div>
-			</div>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						<h3>Mentor</h3>
-					</div>
-				</div>
-				<div class="ym-g75 ym-gr">
-					<div class="ym-gbox-right">
+		<?php $clubs = mysql_query("SELECT DISTINCT *
+								   FROM clubs
+								   ORDER BY end DESC, start ASC");
+		$count = 1;
+		while($club = mysql_fetch_array($clubs)){ $newRow = $count % 2;
+			$id = $club["id"]; $name = $club["name"]; $sName = $club["sname"]; $desc = $club["desc"]; $link = $club["link"]; 
+			$start = sqlDate($club["start"]); $sString = $start["month"] . " " . $start["year"];
+			$end = sqlDate($club["end"]); $eString = is_array($end) ? $end["month"] . " " . $end["year"] : "Present"; 
+			$side = $newRow ? "ym-gl" : "ym-gr"; $boxSide = $newRow ? "ym-gbox-left" : "ym-gbox-right";
+			if($newRow){ ?>
+			<div class="ym-grid linearize-level-1"><?php } ?>
+				<div class="ym-g50 <?php echo $side; ?>">
+					<div class=<?php echo $boxSide; ?>>
+						<span class="anchor" id=<?php echo $sName; ?>></span>
+						<h3 tabindex="-1">
+							<?php echo $name; ?>
+							<span class="label">
+								<a href=<?php echo $link; ?> target="_blank">Website</a>
+							</span>
+						</h3>
+						<h3><span class="subh">(<?php echo $sString . " - " . $eString; ?>)</span></h3>
 						<p>
-						Role Description
-						http://www.dolphin.upenn.edu/vietnam/
+						<?php echo $desc; ?>
 						</p>
+						<dl>
+							<?php $roles = mysql_query("SELECT DISTINCT *
+													  FROM clubs_roles, roles
+													  WHERE rid=id AND cid='" . $id . "'");
+							while($role = mysql_fetch_array($roles)){
+								$rName = $role["name"]; $rDesc = $role["desc"]; ?>
+								<dt><?php echo $rName; ?></dt><dd><?php echo $rDesc; ?></dd>
+							<?php
+							} ?>
+						</dl>
 					</div>
 				</div>
-			</div>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						<h3>Member</h3>
-					</div>
-				</div>
-				<div class="ym-g75 ym-gr">
-					<div class="ym-gbox-right">
-						<p>
-						Role Description
-						</p>
-					</div>
-				</div>
-			</div>
-			
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g50 ym-gl">
-					<h2 id="WiCS" tabindex="-1">Women in Computer Science</h2>
-				</div>
-				<div class="ym-g50 ym-gr rtl">
-					<h2 id="0912" tabindex="-1">April 2011 - Present</h2>
-				</div>
-			</div>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						<h3>Honorary Member</h3>
-					</div>
-				</div>
-				<div class="ym-g75 ym-gr">
-					<div class="ym-gbox-right">
-						<p>
-						Role Description
-						http://www.seas.upenn.edu/~wics/
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g50 ym-gl">
-					<h2 id="PLBD" tabindex="-1">Penn Latin and Ballroom Dance</h2>
-				</div>
-				<div class="ym-g50 ym-gr rtl">
-					<h2 id="0912" tabindex="-1">Sept. 2010 - Dec. 2010</h2>
-				</div>
-			</div>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						<h3>Member</h3>
-					</div>
-				</div>
-				<div class="ym-g75 ym-gr">
-					<div class="ym-gbox-right">
-						<p>
-						Role Description
-						http://www.dolphin.upenn.edu/ballroom/
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g50 ym-gl">
-					<h2 id="STWing" tabindex="-1">Science and Technology Wing</h2>
-				</div>
-				<div class="ym-g50 ym-gr rtl">
-					<h2 id="0912" tabindex="-1">Sept. 2009 - Sept. 2012</h2>
-				</div>
-			</div>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						<h3>Secretary</h3>
-					</div>
-				</div>
-				<div class="ym-g75 ym-gr">
-					<div class="ym-gbox-right">
-						<p>
-						Role Description
-						http://www.stwing.upenn.edu/
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="ym-grid linearize-level-1">
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						<h3>Member</h3>
-					</div>
-				</div>
-				<div class="ym-g75 ym-gr">
-					<div class="ym-gbox-right">
-						<p>
-						Role Description
-						</p>
-					</div>
-				</div>
-			</div>
+			<?php if(!$newRow){ ?>
+			</div><?php } ?>
+		<?php $count += 1;
+		} ?>
 
 		</div>
 	</div>

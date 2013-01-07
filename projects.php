@@ -11,6 +11,19 @@
 			Due to the collegiate nature of these projects, some source code cannot be made available for direct download. If you are a company looking to view my work, use the request links below or the form 
 			<a href="#link">here</a>.
 			</p>
+			<?php
+			$projects = mysql_query("SELECT DISTINCT * 
+									FROM projects P, projects_course PC, term T 
+									WHERE P.id=PC.pid AND PC.cnum=T.cnum ORDER BY term DESC");
+			while($project = mysql_fetch_array($projects)){
+				$id = $project["id"]; $name = $project["name"]; $desc = $project["desc"]; $link = $project["link"];
+				$skills = mysql_query("SELECT DISTINCT * 
+									  FROM projects P, projects_skills PS, skills S
+									  WHERE P.id=PS.pid AND PS.sid = S.id");
+				while($skill = mysql_fetch_array($skills)){
+					
+				}
+			} ?>
 Project
 ID
 Name

@@ -17,7 +17,9 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 						<h3>Current Courses <span class="subh"><?php echo $seas . " '" . $year; ?></span></h3>
 						<ul>
 						<?php
-						$currCourses = mysql_query("SELECT DISTINCT * FROM course, term WHERE cnum=num AND term='" . $currSem . "' ORDER BY num");
+						$currCourses = mysql_query("SELECT DISTINCT * 
+												   FROM course, term 
+												   WHERE cnum=num AND term='" . $currSem . "' ORDER BY num");
 						while($row = mysql_fetch_array($currCourses)){ ?>
 							<li>
 								<a href=<?php echo "courses.php#" . $row["cnum"]; ?>>
@@ -49,7 +51,8 @@ The Merlin Venture is about me. It is my chronicle of me trying to become a bett
 						<table class="narrow">
 							<tbody>
 							<?php
-							$skills = mysql_query("SELECT DISTINCT * FROM skills ORDER BY top LIMIT 10");
+							$skills = mysql_query("SELECT DISTINCT * 
+												  FROM skills ORDER BY top LIMIT 10");
 							while($skill = mysql_fetch_array($skills)){ 
 								$sid = $skill["id"]; $name = $skill["name"]; $image = $skill["image"];
 							?>
@@ -60,7 +63,9 @@ The Merlin Venture is about me. It is my chronicle of me trying to become a bett
 								</td>
 								<td>via</td>
 								<td>
-									<?php $vias = mysql_query("SELECT DISTINCT * FROM skills_via WHERE sid='" . $sid . "'"); 
+									<?php $vias = mysql_query("SELECT DISTINCT * 
+															  FROM skills_via 
+															  WHERE sid='" . $sid . "'"); 
 									$numVias = mysql_num_rows($vias); $numVia = 1; $c = ",";
 									while($via = mysql_fetch_array($vias)){
 										$cnum = $via["cnum"]; $siteid = $via["siteid"];
@@ -68,8 +73,10 @@ The Merlin Venture is about me. It is my chronicle of me trying to become a bett
 											<a href="courses.php#<?php echo $cnum; ?>">
 												<?php echo $cnum; ?></a><?php 
 										}
-										if($siteid != 0){
-											$site = mysql_fetch_array(mysql_query("SELECT DISTINCT * FROM sites WHERE id='" . $siteid . "'")); 
+										if($siteid != 99){
+											$site = mysql_fetch_array(mysql_query("SELECT DISTINCT * 
+																				  FROM sites 
+																				  WHERE id='" . $siteid . "'")); 
 											$name = $site["name"]; $url = $site["url"]; ?>
 											<a href=<?php echo $url; ?>><?php echo $name; ?></a><?php
 										}
