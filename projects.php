@@ -7,6 +7,20 @@
 	<div class="ym-wrapper">
 		<div class="ym-wbox">
 
+			<p>
+			Due to the collegiate nature of these projects, some source code cannot be made available for direct download. If you are a company looking to view my work, use the request links below or the form 
+			<a href="#link">here</a>.
+			</p>
+Project
+ID
+Name
+Desc
+Download Link and View Source Link OR Request Link
+
+Course
+Term
+
+Languages (Make a Top Skills)
 			<h2 id="SuperScalar" tabindex="-1">SuperScalar Processor</h2>
 			<div class="ym-grid linearize-level-1">
 				<h3 id="coursenum" tabindex="-1">Class Name</h3>
