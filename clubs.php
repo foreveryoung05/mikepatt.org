@@ -20,8 +20,8 @@
 			if($newRow){ ?>
 			<div class="ym-grid linearize-level-1"><?php } ?>
 				<div class="ym-g50 <?php echo $side; ?>">
-					<div class=<?php echo $boxSide; ?>>
-						<span class="anchor" id=<?php echo $sName; ?>></span>
+					<div class=<?php echo $boxSide; ?> style="padding-bottom: 43px;>
+						<span class="anchor" id="<?php echo $sName; ?>"></span>
 						<h3 tabindex="-1">
 							<?php echo $name; ?>
 							<span class="label">

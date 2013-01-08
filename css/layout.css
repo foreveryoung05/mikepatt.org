@@ -37,3 +37,6 @@
 
 /* import progress bar styling */
 @import url(progressbars.css);
+
+/* import overlay styling */
+@import url(overlay.css);

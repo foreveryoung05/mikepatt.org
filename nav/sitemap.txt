@@ -4,3 +4,6 @@ http://mikepatt.org/courses.php
 http://mikepatt.org/projects.php
 http://mikepatt.org/clubs.php
 http://mikepatt.org/interests.php
+http://themerlinventure.mikepatt.org/
+http://kingscourses.mikepatt.org/
+http://cqs.mikepatt.org/

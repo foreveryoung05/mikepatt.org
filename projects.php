@@ -2,6 +2,7 @@
 ?>
 <?php include('header.php') ?>
 <?php include($navBar) ?>
+<?php include('requestform.php'); ?>
 
 <div id="main" class="ym-clearfix" role="main">
 	<div class="ym-wrapper">
@@ -9,8 +10,8 @@
 			
 			<div class="ym-grid linearize-level-1">
 				<div class="ym-g30 ym-gl">&nbsp;</div>
-				<div class="ym-g40 ym-gl">
-				Due to the collegiate nature of these projects, some source code cannot be made available for direct download. If you are a company looking to view my work, use the request links below or the form <a href="#link">here</a>.
+				<div class="ym-g40 ym-gl" style="padding-bottom: 43px;">
+				Due to the collegiate nature of these projects, some source code cannot be made available for direct download. If you are a company looking to view my work, use the request links below or the form <a href="#" class="activator" id="activator">here</a>.
 				</div>
 				<div class="ym-g30 ym-gl">&nbsp;</div>
 			</div>
@@ -27,8 +28,8 @@
 			if($newRow){ ?>
 			<div class="ym-grid linearize-level-1"><?php } ?>
 				<div class="ym-g50 <?php echo $side; ?>">
-					<div class="<?php echo $boxSide; ?>">
-						<span class="anchor" id=<?php echo $sName; ?>></span>
+					<div class="<?php echo $boxSide; ?>" style="padding-bottom: 43px;">
+						<span class="anchor" id="<?php echo $sName; ?>"></span>
 						<h3 tabindex="-1">
 							<?php echo $name; 
 							if(strcmp($view, "NOVIEW")){ ?>
@@ -72,14 +73,14 @@
 											  WHERE sid = id AND pid = '" . $id . "'");
 						while($skill = mysql_fetch_array($skills)){
 							$skName = $skill["name"]; $image = $skill["image"]; ?>
-							<img src=<?php echo $image . " "; size(21, 21); ?> alt="<?php echo $skName; ?>" />
+							<img src=<?php echo $image . " "; size(21, 21); ?> alt="<?php echo $skName; ?>" title="<?php echo $skName; ?>" />
 						<?php } ?>
 						<br />
 						<?php if(strcmp($source, "REQUEST")){ ?>
 						<a href=<?php echo $source . "/archive/master.zip"; ?> class="ym-button ym-next" target="_blank">Download</a>
 						<a href=<?php echo $source . "/fork"; ?> class="ym-button ym-edit"  target="_blank">Fork</a>		
 						<?php } else { ?>
-						<!--a href="requestcode.php" class="ym-button ym-next">Request</a-->
+						<a href="#" class="ym-button ym-next activator" id="activator">Request</a>
 						<?php } ?>
 	
 					</div>

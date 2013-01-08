@@ -60,6 +60,7 @@
 <script src="<?php RT; ?>css/yaml/add-ons/accessible-tabs/jquery.tabs.js"></script>
 <script src="<?php RT; ?>css/yaml/add-ons/syncheight/jquery.syncheight.js"></script>
 <script src="<?php RT; ?>js/domscript.js"></script>
+<script src="<?php RT; ?>js/overlay.js"></script>
 
 </body>
 </html>
