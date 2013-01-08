@@ -38,7 +38,7 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 						What is "The Merlin Venture"?
 						</p>
 						<p>
-The Merlin Venture is about me. It is my chronicle of me trying to become a better person, a better computer scientist, a better reader, a better writer,  etc. It is the start of me taking things more seriously that I haven't been: my career, my fitness, my academics, so on and so forth.
+						The Merlin Venture is about me. It is my chronicle of me trying to become a better person, a better computer scientist, a better reader, a better writer,  etc. It is the start of me taking things more seriously that I haven't been: my career, my fitness, my academics, so on and so forth.
 						</p>
 						<p>
 							Find out more <a href="http://themerlinventure.mikepatt.org/2012/12/what-is-merlin-venture.html">here</a>

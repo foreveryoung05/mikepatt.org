@@ -6,53 +6,89 @@
 <div id="main" class="ym-clearfix" role="main">
 	<div class="ym-wrapper">
 		<div class="ym-wbox">
-
-			<p>
-			Due to the collegiate nature of these projects, some source code cannot be made available for direct download. If you are a company looking to view my work, use the request links below or the form 
-			<a href="#link">here</a>.
-			</p>
-			<?php
-			$projects = mysql_query("SELECT DISTINCT * 
-									FROM projects P, projects_course PC, term T 
-									WHERE P.id=PC.pid AND PC.cnum=T.cnum ORDER BY term DESC");
-			while($project = mysql_fetch_array($projects)){
-				$id = $project["id"]; $name = $project["name"]; $desc = $project["desc"]; $link = $project["link"];
-				$skills = mysql_query("SELECT DISTINCT * 
-									  FROM projects P, projects_skills PS, skills S
-									  WHERE P.id=PS.pid AND PS.sid = S.id");
-				while($skill = mysql_fetch_array($skills)){
-					
-				}
-			} ?>
-Project
-ID
-Name
-Desc
-Download Link and View Source Link OR Request Link
-
-Course
-Term
-
-Languages (Make a Top Skills)
-			<h2 id="SuperScalar" tabindex="-1">SuperScalar Processor</h2>
+			
 			<div class="ym-grid linearize-level-1">
-				<h3 id="coursenum" tabindex="-1">Class Name</h3>
-				<div class="ym-g25 ym-gl">
-					<div class="ym-gbox-left">
-						<a href="#" class="ym-button ym-add">Download</a>
-						<h3><span class="subh">coursenum</span></h3>
-						<span class="label">pre-reqs: none</span>
-					</div>
+				<div class="ym-g30 ym-gl">&nbsp;</div>
+				<div class="ym-g40 ym-gl">
+				Due to the collegiate nature of these projects, some source code cannot be made available for direct download. If you are a company looking to view my work, use the request links below or the form <a href="#link">here</a>.
 				</div>
-				<div class="ym-g75 ym-gr">
-					<div class="ym-gbox-right">
-						<p>
-						Class Description
-						</p>
-					</div>
-				</div>
+				<div class="ym-g30 ym-gl">&nbsp;</div>
 			</div>
 			
+		<?php
+		$projects = mysql_query("SELECT DISTINCT * 
+								FROM projects ORDER BY start DESC");
+		$count = 1;
+		while($project = mysql_fetch_array($projects)){ $newRow = $count % 2;
+			$id = $project["id"]; $name = $project["name"]; $sName = $project["sname"];
+			$desc = $project["desc"]; $source = $project["source"]; $view = $project["view"];
+			$start = $project["start"]; $end = $project["end"];
+			$side = $newRow ? "ym-gl" : "ym-gr"; $boxSide = $newRow ? "ym-gbox-left" : "ym-gbox-right";
+			if($newRow){ ?>
+			<div class="ym-grid linearize-level-1"><?php } ?>
+				<div class="ym-g50 <?php echo $side; ?>">
+					<div class="<?php echo $boxSide; ?>">
+						<span class="anchor" id=<?php echo $sName; ?>></span>
+						<h3 tabindex="-1">
+							<?php echo $name; 
+							if(strcmp($view, "NOVIEW")){ ?>
+							<span class="label">
+								<a href=<?php echo $view; ?> target="_blank">Website</a>
+							</span>
+							<?php }
+							if(strcmp($source, "REQUEST")){ ?>
+							<span class="label">
+								<a href=<?php echo $source; ?> target="_blank">Source Code</a>
+							</span>
+							<?php } ?>							
+						</h3>
+						
+						<?php $course = mysql_fetch_array(
+										mysql_query("SELECT DISTINCT *
+													FROM projects_course
+													WHERE pid='" . $id . "'"));
+						if(strcmp($course["cnum"], "NONUM")){
+							$cnum = $course["cnum"];
+							$termArray = mysql_fetch_array(
+										 mysql_query("SELECT DISTINCT *
+												     FROM term
+													 WHERE cnum='" . $cnum . "'"));
+							$termDict = convertSem($termArray["term"]);
+							$term = $termDict["season"] . " '" . $termDict["year"]; 
+						} else {
+							$cnum = "Independent";
+							$term = $start . " - " . $end;
+						} ?>
+						<h3><span class="subh">(<?php echo $cnum . ", " . $term; ?>)</span></h3>
+						
+						<p>
+						<?php echo $desc; ?>
+						</p>
+						
+						<h4>Skills</h4>
+						<?php
+						$skills = mysql_query("SELECT DISTINCT * 
+											  FROM projects_skills, skills
+											  WHERE sid = id AND pid = '" . $id . "'");
+						while($skill = mysql_fetch_array($skills)){
+							$skName = $skill["name"]; $image = $skill["image"]; ?>
+							<img src=<?php echo $image . " "; size(21, 21); ?> alt="<?php echo $skName; ?>" />
+						<?php } ?>
+						<br />
+						<?php if(strcmp($source, "REQUEST")){ ?>
+						<a href=<?php echo $source . "/archive/master.zip"; ?> class="ym-button ym-next" target="_blank">Download</a>
+						<a href=<?php echo $source . "/fork"; ?> class="ym-button ym-edit"  target="_blank">Fork</a>		
+						<?php } else { ?>
+						<!--a href="requestcode.php" class="ym-button ym-next">Request</a-->
+						<?php } ?>
+	
+					</div>
+				</div>
+			<?php if(!$newRow){ ?>
+			</div><?php } ?>
+		<?php $count += 1;
+		} ?>
+
 		</div>
 	</div>
 </div>

@@ -3,10 +3,14 @@
 		<div class="ym-wbox">
 			<div class="ym-hlist">
 				<ul>
-					<li><a href="#VSA">Vietnamese Students' Association</a></li>
-					<li><a href="#WiCS">Women in Computer Science</a></li>
-					<li><a href="#PLBD">Penn Latin and Ballroom Dance</a></li>
-					<li><a href="#STWing">Science and Technology Wing</a></li>
+				<?php $clubs = mysql_query("SELECT DISTINCT *
+										   FROM clubs
+										   ORDER BY end DESC, start ASC");
+				while($club = mysql_fetch_array($clubs)){ 
+					$name = $club["name"]; $sName = $club["sname"]; ?>
+					<li><a href="#<?php echo $sName; ?>"><?php echo $name; ?></a></li>
+				<?php
+				} ?>
 				</ul>
 			</div>
 		</div>

@@ -16,6 +16,7 @@
 			$start = sqlDate($club["start"]); $sString = $start["month"] . " " . $start["year"];
 			$end = sqlDate($club["end"]); $eString = is_array($end) ? $end["month"] . " " . $end["year"] : "Present"; 
 			$side = $newRow ? "ym-gl" : "ym-gr"; $boxSide = $newRow ? "ym-gbox-left" : "ym-gbox-right";
+			$status = strcmp($sName, "WiCS") ? "Member" : "Honorary Member";
 			if($newRow){ ?>
 			<div class="ym-grid linearize-level-1"><?php } ?>
 				<div class="ym-g50 <?php echo $side; ?>">
@@ -27,7 +28,7 @@
 								<a href=<?php echo $link; ?> target="_blank">Website</a>
 							</span>
 						</h3>
-						<h3><span class="subh">(<?php echo $sString . " - " . $eString; ?>)</span></h3>
+						<h3><span class="subh"><?php echo $status . " (" . $sString . " - " . $eString . ")"; ?></span></h3>
 						<p>
 						<?php echo $desc; ?>
 						</p>

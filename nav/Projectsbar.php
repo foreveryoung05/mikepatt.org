@@ -3,13 +3,15 @@
 		<div class="ym-wbox">
 			<div class="ym-hlist">
 				<ul>
-					<li><a href="#LC4Trace">LC4 Trace Generator (C)</a></li>
-					<li><a href="#KingsCourses">King's Courses (mySQL, PHP)</a></li>
-					<li><a href="#SuperScalar">Superscalar Processor (Verilog)</a></li>
-					<li><a href="#Scrabble">Scrabble (Python)</a></li>
-					<!--<li><a href="#codingqs">Coding Q's (Ruby)</a></li>
-					<li><a href="#penndining">Penn Dining (Python)</a></li>
-					<li><a href="#pennvideo">Penn Video Network (Python)</a></li>-->
+				<?php
+				$projects = mysql_query("SELECT DISTINCT * 
+										FROM projects AS p, projects_course AS pc, term AS t 
+										WHERE p.id=pc.pid AND pc.cnum=t.cnum ORDER BY term DESC");
+				while($project = mysql_fetch_array($projects)){
+					$name = $project["name"]; $sName = $project["sname"]; ?>
+					<li><a href="#<?php echo $sName; ?>"><?php echo $name; ?></a></li>
+				<?php
+				} ?>
 				</ul>
 			</div>
 		</div>
