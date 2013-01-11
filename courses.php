@@ -11,11 +11,11 @@ function isCourse($string){
 }
 
 function printSem($sem){
-	$semDict = array("A" => "Spring", "B" => "Summer", "C" => "Fall");
-	$seas = $semDict[substr($sem, -1)]; $year = substr($sem, -3, 2);
+	$semDict = convertSem($sem);
+	$seas = $semDict["season"]; $year = $semDict["year"];
 	$courses = mysql_query("SELECT DISTINCT * 
-						   FROM course, term 
-						   WHERE num=cnum and term='" . $sem . "' ORDER BY term DESC"); ?>
+						   FROM course
+						   WHERE term='" . $sem . "' ORDER BY num ASC"); ?>
 	<h2 id="<?php echo $seas . $year; ?>" tabindex="-1"><?php echo $seas . " '" . $year; ?></h2>
 	<?php while($course = mysql_fetch_array($courses)) { 
 		$num = $course["num"]; $name = $course["name"]; $desc = $course["desc"];
@@ -37,7 +37,18 @@ function printSem($sem){
 								&nbsp;&nbsp;<?php echo $prname; ?><br />
 						<?php }
 						} ?>
-					</span>
+					</span> 
+					<?php $skills = mysql_query("SELECT DISTINCT * 
+											  FROM skills_via, skills
+											  WHERE sid=id AND cnum='" . $num . "'"); 
+					if(mysql_num_rows($skills) != 0){ ?>
+					<h4>Skills
+					<?php while($skill = mysql_fetch_array($skills)){
+						$skName = $skill["name"]; $image = $skill["image"]; ?>
+						<img src=<?php echo $image . " "; size(21, 21); ?> alt="<?php echo $skName; ?>" title="<?php echo $skName; ?>" />
+					<?php } 
+					} ?>
+					</h4>
 				</div>
 			</div>
 			<div class="ym-g75 ym-gr">

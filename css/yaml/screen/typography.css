@@ -27,12 +27,10 @@
 	*/
 
 	/* (en) reset font size for all elements to standard (16 Pixel) */
-	/* (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen */
 	html * { font-size:100%; }
 
 	/**
 	* (en) reset monospaced elements to font size 16px in all browsers
-	* (de) Schriftgröße von monospaced Elemente in allen Browsern auf 16 Pixel setzen
 	*
 	* @see: http://webkit.org/blog/67/strange-medium/
 	*/
@@ -48,15 +46,13 @@
 	}
 
 	/* (en) base layout gets standard font size 14px */
-	/* (de) Basis-Layout erhält Standardschriftgröße von 14 Pixeln */
 	body {
 		font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
 		font-size:87.50%; /* base: 14px */
 		color:#444;
 
 		/* (en) Prevent auto-scaling of text in mobile webkit browsers */
-		/* (de) Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden */
-		-webkit-text-size-adjust:100%;
+			-webkit-text-size-adjust:100%;
 	}
 
 	/*--- Headings | Überschriften ------------------------------------------------------------------------*/
@@ -111,14 +107,6 @@
 		margin: 1.5em 0 0 0;
 	}
 
-	h3 .subh {
-		font-size: 80%;
-		color:#8B8F90;
-	}
-	
-	h3 .hbutton {
-	    font-size: 60%;
-	}
 	/* --- Lists | Listen  -------------------------------------------------------------------------------- */
 
 	ul,
@@ -305,7 +293,6 @@
 	* Generic Content Classes
 	*
 	* (en) standard classes for positioning and highlighting
-	* (de) Standardklassen zur Positionierung und Hervorhebung
 	*
 	* @section content-generic-classes
 	*/
@@ -392,7 +379,6 @@
 	* Tables | Tabellen
 	*
 	* (en) Generic classes for table-width and design definition
-	* (de) Generische Klassen für die Tabellenbreite und Gestaltungsvorschriften für Tabellen
 	*
 	* @section content-tables
 	*/

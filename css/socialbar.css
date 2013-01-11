@@ -3,8 +3,8 @@
 }
 
 #socialbar li img {
-    width: 24px; 
-    height:24px;
+    width: 32px; 
+    height:32px;
 }
 
 #socialbar li a:hover {
@@ -26,6 +26,7 @@
 }
 
 #socialbar{
-    width: 180px;
-    text-align: center;
+    /*width: 180px;
+    text-align: center;*/
 }
+

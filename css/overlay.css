@@ -9,7 +9,7 @@
 }
 .hiddenbox{
     position:fixed;
-    top:-100%;
+    top:-200%;
     left:30%;
     right:30%;
     background-color:#fff;

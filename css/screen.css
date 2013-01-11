@@ -16,7 +16,6 @@
 
 	/**
 	* (en) Forcing vertical scrollbars in IE8, Firefox, Webkit & Opera
-	* (de) Erzwingen vertikaler Scrollbalken in IE8, Firefox, Webkit & Opera
 	*
 	* @workaround
 	* @affected IE8, FF, Webkit, Opera
@@ -31,7 +30,6 @@
 	/*------------------------------------------------------------------------------------------------------*/
 
 	/* (en) Marginal areas & page background */
-	/* (de) Randbereiche & Seitenhintergrund */
 	body { background: #0d1113; }
 
 	body > header,
@@ -84,7 +82,6 @@
 	}
 
 	/* (en) Layout:width, background, borders */
-	/* (de) Layout:Breite, Hintergrund, Rahmen */
 
 	#intro,
 	header,
@@ -128,7 +125,7 @@
 
 	header h1,
 	header h2 {
-		font-family: 'Yanone Kaffeesatz', Arial, Helvetica, sans-serif;
+		font-family: 'Alegreya SC', Arial, Helvetica, sans-serif;
 		font-weight:bold;
 		font-size:120px;
 		color:#8b8f90;
@@ -142,7 +139,7 @@
 
 	header h2 {
 		position:relative;
-		top: -16px;
+		top: -12px;
 		left: 4px;
 		letter-spacing:8px;
 		font-size:45px;
@@ -647,7 +644,6 @@
 	* Skiplinks
 	*
 	* (en) Visual styling for skiplink navigation
-	* (de) Visuelle Gestaltung der Skiplink-Navigation
 	*
 	* @section content-skiplinks
 	*/

@@ -1,10 +1,34 @@
 <footer role="contentinfo">
-	<div itemscope itemtype="http://data-vocabulary.org/Person" class="ym-wrapper">
+	<div class="ym-wrapper">
 		<div class="ym-wbox">
 			<div class="ym-grid linearize-level-2">
-				<div class="ym-g66 ym-gl">
+				<div class="ym-g33 ym-gl">
 					<div class="ym-gbox-left">
-						<p>&copy; 2012 by <a href="http://www.mikepatt.org"><span itemprop="nickname">Mike Patterson</span></a><br></p>
+						<p>Share This Page<br />Created via <a href="http://www.addthis.com/">AddThis</a></p>
+						<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+							<a class="addthis_button_preferred_1" ></a>
+							<a class="addthis_button_preferred_2"></a>
+							<a class="addthis_button_preferred_3"></a>
+							<a class="addthis_button_preferred_4"></a>
+							<a class="addthis_button_preferred_5"></a>
+							<a class="addthis_counter addthis_bubble_style"></a>
+						</div>
+						<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50e7bc71362be3be"></script>
+					</div>
+				</div>
+				
+				<div class="ym-g33 ym-gl">
+					<div class="ym-gbox-left center-text">
+						<p>&copy; 2012 by <a href="http://www.mikepatt.org">Mike Patterson</a><br />
+						Layout based on <a href="http://www.yaml.de">YAML</a>,<br />
+						licensed under <a href="http://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.</p>
+					</div>
+				</div>
+
+				<div class="ym-g33 ym-gr">
+					<div class="ym-gbox-right">
+						<p>&nbsp;<br />Online Profiles</p>
 						<ul id="socialbar">
 							<li id="github">
 								<a target="_blank" href="http://www.github.com/mikepatt77">
@@ -39,12 +63,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="ym-g33 ym-gl">
-					<div class="ym-gbox-right">
-						<p>Layout based on <a href="http://www.yaml.de">YAML</a>,<br>
-						licensed under <a href="http://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.</p>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>

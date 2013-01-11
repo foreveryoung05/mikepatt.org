@@ -2,7 +2,6 @@
  * "Yet Another Multicolumn Layout" - YAML CSS Framework
  *
  * (en) YAML core stylesheet
- * (de) YAML Basis-Stylesheet
  *
  * Don't make any changes in this file!
  * Your changes should be placed in any css-file in your own stylesheet folder.
@@ -24,17 +23,14 @@
 	*/
 
 	/* (en) Global reset of paddings and margins for all HTML elements */
-	/* (de) Globales Zurücksetzen der Innen- und Außenabstände für alle HTML-Elemente */
 	* { margin:0; padding:0; }
 
 	/* (en) Correction:margin/padding reset caused too small select boxes. */
-	/* (de) Korrektur:Das Zurücksetzen der Abstände verursacht zu kleine Selectboxen. */
 	option { padding-left:0.4em; } /* LTR */
 	select { padding:1px; }
 
 	/**
 	* (en) Global fix of the Italics bugs in IE 5.x and IE 6
-	* (de) Globale Korrektur des Italics Bugs des IE 5.x und IE 6
 	*
 	* @bugfix
 	* @affected   IE 5.x/Win, IE6
@@ -45,12 +41,10 @@
 
 	body {
 		/* (en) Fix for rounding errors when scaling font sizes in older versions of Opera browser */
-		/* (de) Beseitigung von Rundungsfehler beim Skalieren von Schriftgrößen in älteren Opera Versionen */
-		font-size:100%;
+			font-size:100%;
 
 		/* (en) Standard values for colors and text alignment */
-		/* (de) Vorgabe der Standardfarben und Textausrichtung */
-		background:#fff;
+			background:#fff;
 		color:#000;
 		text-align:left; /* LTR */
 	}
@@ -61,7 +55,6 @@
 	}
 
 	/* (en) avoid visible outlines on DIV containers in Webkit browsers */
-	/* (de) Vermeidung sichtbarer Outline-Rahmen in Webkit-Browsern */
 	div:target { outline:0 none; }
 
 	/* (en) HTML 5 - adjusting visual formatting model to block level */
@@ -72,7 +65,6 @@
 	}
 
 	/* (en) HTML5 - default media element styles */
-	/* (de) HTML5 - Standard Eigenschaften für Media-Elemente */
 	audio,
 	canvas,
 	video {
@@ -80,19 +72,16 @@
 	}
 
 	/* (en) HTML5 - don't show <audio> element if there aren't controls */
-	/* (de) HTML5 - <audio> ohne Kontrollelemente sollten nicht angezeigt werden */
 	audio:not([controls]) {
 		display: none;
 	}
 
 	/* (en) HTML5 - add missing styling in IE & old FF for hidden attribute  */
-	/* (de) HTML5 - Eigenschaften für das hidden-Attribut in älteren IEs und FF nachrüsten */
 	[hidden] {
 		display: none;
 	}
 
 	/* (en) force consistant appearance of input[type="search"] elements in all browser  */
-	/* (de) Einheitliches Erscheinungsbild für input[type="search"] Elemente erzwingen  */
 	input[type="search"] {
 		-webkit-appearance: textfield;
 	}
@@ -101,11 +90,9 @@
 	}
 
 	/* (en) Clear borders for <fieldset> and <img> elements */
-	/* (de) Rahmen für <fieldset> und <img> Elemente löschen */
 	fieldset, img { border:0 solid; }
 
 	/* (en) new standard values for lists, blockquote, cite and tables */
-	/* (de) Neue Standardwerte für Listen, Zitate und Tabellen */
 	ul, ol, dl { margin:0 0 1em 1em; } /* LTR */
 	li {
 		line-height:1.5em;
@@ -131,7 +118,6 @@
 	*/
 
 	/* (en) clearfix method for clearing floats */
-	/* (de) Clearfix-Methode zum Clearen der Float-Umgebungen */
 	.ym-clearfix:before {
 		content:"";
 		display:table;
@@ -146,7 +132,6 @@
 	}
 
 	/* (en) alternative solutions to contain floats */
-	/* (de) Alternative Methoden zum Einschließen von Float-Umgebungen */
 	.ym-contain-dt { display:table; width: 100%; overflow: visible; }
 	.ym-contain-oh { overflow:hidden; width:100%; display:block; }
 	.ym-contain-fl { float:left; width:100%; }
@@ -155,11 +140,9 @@
 	* @section Accessibility Module
 	*
 	* (en) skip links and hidden content
-	* (de) Skip-Links und versteckte Inhalte
 	*/
 
 	/* (en) classes for invisible elements in the base layout */
-	/* (de) Klassen für unsichtbare Elemente im Basislayout */
 	.ym-skip,
 	.ym-hideme,
 	.ym-print {
@@ -169,7 +152,6 @@
 	}
 
 	/* (en) make skip links visible when using tab navigation */
-	/* (de) Skip-Links für Tab-Navigation sichtbar schalten */
 	.ym-skip:focus,
 	.ym-skip:active {
 		position:static;
@@ -221,7 +203,6 @@
 	.ym-cbox-right { padding: 0 0 0 10px }
 
 	/* (en) IE-Clearing:Only used in Internet Explorer, switched on in iehacks.css */
-	/* (de) IE-Clearing:Benötigt nur der Internet Explorer und über iehacks.css zugeschaltet */
 	.ym-ie-clearing { display:none; }
 
 	/**
@@ -243,10 +224,12 @@
 	.ym-gl { float:left; margin: 0; }
 	.ym-gr { float:right; margin: 0 0 0 -5px; }
 
+    .ym-g03 { width:3.333%; }
 	.ym-g05 { width:5%; }
 	.ym-g10 { width:10%; }
 	.ym-g15 { width:15%; }
 	.ym-g20 { width:20%; }
+    .ym-g30 { width:30%; }
 	.ym-g40 { width:40%; }
 	.ym-g60 { width:60%; }
 	.ym-g80 { width:80%; }
@@ -296,7 +279,6 @@
 	* |-------------------------------|
 	*
 	* (en) Styling of forms where both label and input/select/textarea are styled with display:block;
-	* (de) Formulargestaltung, bei der sowohl label als auch input/select/textarea mit display:block; gestaltet werden
 	*/
 
 	.ym-form,
@@ -400,7 +382,6 @@
 	* |-------------------------------------------|
 	*
 	* (en) Styling of forms where label floats left of form-elements
-	* (de) Formulargestaltung, bei der die label-Elemente nach links fließen
 	*/
 
 	/* Columnar display | Spalten-Darstellung */
@@ -456,7 +437,6 @@
 	* @section print adjustments for core modules
 	*
 	* (en) float clearing for subtemplates. Uses display:table to avoid bugs in FF & IE
-	* (de) Float Clearing für die Subtemplates. Verwendet display:table, um Darstellungsprobleme im FF & IE zu vermeiden
 	*
 	* @bugfix
 	* @since     3.0
@@ -472,14 +452,12 @@
 	}
 
 	/* (en) make .ym-print class visible */
-	/* (de) .ym-print-Klasse sichtbar schalten */
 	.ym-print {
 		position:static;
 		left:0;
 	}
 
 	/* (en) generic class to hide elements for print */
-	/* (de) Allgemeine CSS Klasse, um beliebige Elemente in der Druckausgabe auszublenden */
 	.ym-noprint {
 		display:none !important;
 	}

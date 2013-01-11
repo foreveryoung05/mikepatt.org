@@ -5,3 +5,28 @@ span.anchor {
     visibility: hidden;
     z-index: -100;
 }
+
+h3 .subh {
+    font-size: 80%;
+    color:#8B8F90;
+}
+
+h3 .hbutton {
+    font-size: 60%;
+}
+
+td.no-td-border {
+    border-top: 0px none #ccc;
+}
+
+table.no-table-border {
+    border: none;
+}
+
+.center-text {
+    text-align: center;
+}
+
+div#main p {
+    text-align: justify;
+}

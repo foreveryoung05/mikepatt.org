@@ -18,8 +18,7 @@
 
 	.ym-hlist {
 		/* (en) containing floats in IE */
-		/* (de) Einfassen der Floats im IE */
-		width:100%;
+			width:100%;
 		overflow:hidden;
 		/* (en|de) Bugfix:IE - collapsing horizontal margins */
 		position:relative;

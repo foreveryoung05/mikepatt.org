@@ -14,41 +14,48 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 					<div class="ym-gbox-left">
 						<?php $currSem = "2013A"; $semDict = convertSem($currSem);
 						$seas = $semDict["season"]; $year = $semDict["year"]; ?>
-						<h3>Current Courses <span class="subh"><?php echo $seas . " '" . $year; ?></span></h3>
+						<h3 class="center-text">Current Courses <span class="subh"><?php echo $seas . " '" . $year; ?></span></h3>
+						<div class="box info">
 						<ul>
 						<?php
 						$currCourses = mysql_query("SELECT DISTINCT * 
-												   FROM course, term 
-												   WHERE cnum=num AND term='" . $currSem . "' ORDER BY num");
+												   FROM course
+												   WHERE term='" . $currSem . "' ORDER BY num");
 						while($row = mysql_fetch_array($currCourses)){ ?>
 							<li>
-								<a href=<?php echo "courses.php#" . $row["cnum"]; ?>>
-								<?php echo $row["cnum"] . " - " . $row["name"]; ?>
+								<a href=<?php echo "courses.php#" . $row["num"]; ?>>
+								<?php echo $row["num"] . " - " . $row["name"]; ?>
 								</a>
 							</li>
 						<?php
 						} ?>
 						</ul>
+						</div>
 					</div>
 				</div>
+				
 				<div class="ym-g33 ym-gl">
-					<div class="ym-gbox">
-						<h3>The Merlin Venture <span class="subh">Blog</span></h3>
+					<div class="ym-gbox-left">
+						<h3 class="center-text">The Merlin Venture <span class="subh">Blog</span></h3>
+						<div class="box">
 						<p>
 						What is "The Merlin Venture"?
 						</p>
-						<p>
+						<p class="justified">
 						The Merlin Venture is about me. It is my chronicle of me trying to become a better person, a better computer scientist, a better reader, a better writer,  etc. It is the start of me taking things more seriously that I haven't been: my career, my fitness, my academics, so on and so forth.
 						</p>
 						<p>
 							Find out more <a href="http://themerlinventure.mikepatt.org/2012/12/what-is-merlin-venture.html">here</a>
 						</p>
+						</div>
 					</div>
 				</div>
-				<div class="ym-g33 ym-gr">
-					<div class="ym-gbox-right">
-						<h3>Skills <span class="subh">Languages and Technologies</span></h3>
-						<table class="narrow">
+				
+				<div class="ym-g33 ym-gl">
+					<div class="ym-gbox-left">
+						<h3 class="center-text">Skills <span class="subh">Languages and Technologies</span></h3>
+						<div class="box info">
+						<table class="narrow no-table-border">
 							<tbody>
 							<?php
 							$skills = mysql_query("SELECT DISTINCT * 
@@ -57,12 +64,12 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 								$sid = $skill["id"]; $name = $skill["name"]; $image = $skill["image"];
 							?>
 							<tr>
-								<td>
+								<td class="no-td-border">
 									<img src=<?php echo $image . " "; size(21,21); ?> />
 									<?php echo $name; ?>
 								</td>
-								<td>via</td>
-								<td>
+								<td class="no-td-border">via</td>
+								<td class="no-td-border">
 									<?php $vias = mysql_query("SELECT DISTINCT * 
 															  FROM skills_via 
 															  WHERE sid='" . $sid . "'"); 
@@ -89,6 +96,7 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 							<?php } ?>
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 			</div>
