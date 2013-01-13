@@ -25,7 +25,7 @@
 		while($project = mysql_fetch_array($projects)){ $oddCol = $colCount % 2; $oddRow = $rowCount % 2;
 			$id = $project["id"]; $name = $project["name"]; $sName = $project["sname"];
 			$desc = $project["desc"]; $source = $project["source"]; $view = $project["view"];
-			$start = $project["start"]; $end = $project["end"];
+			$start = sqlDate($project["start"]); $end = sqlDate($project["end"]);
 			$side = $oddCol ? "ym-gl" : "ym-gr"; $boxSide = $oddCol ? "ym-gbox-left " : "ym-gbox-right"; 
 			if($oddCol){ $color = $oddRow ? "" : "info"; ?>
 			<div class="ym-grid ym-equalize linearize-level-1"><?php } else { $color = !$oddRow ? "" : "info"; } ?>
@@ -46,7 +46,7 @@
 							<?php } ?>							
 						</h3>
 						<div class="box <?php echo $color; ?>">
-						
+							
 						<?php $course = mysql_fetch_array(
 										mysql_query("SELECT DISTINCT *
 													FROM projects_course
@@ -60,25 +60,32 @@
 							$termDict = convertSem($termArray["term"]);
 							$term = $termDict["season"] . " '" . $termDict["year"]; 
 						} else {
-							$cnum = "Independent";
-							$term = $start . " - " . $end;
+							$cnum = "Indep.";
+							$term = $start["mdsy"] . " - " . $end["mdsy"];
 						} ?>
-						<h3><span class="subh">(<?php echo $cnum . ", " . $term; ?>)</span></h3>
 						
-						<p class="justified">
+						<div class="ym-grid ym-equalize linearize-level-1">
+							<div class = "ym-g50 ym-gl">						
+								<h4 class="left-text no-top-mar"><?php echo $cnum . ", " . $term; ?></h4>
+							</div>
+							
+							<div class = "ym-g50 ym-gr">
+								<h4 class="right-text no-top-mar">Skills
+								<?php
+								$skills = mysql_query("SELECT DISTINCT * 
+													  FROM projects_skills, skills
+													  WHERE sid = id AND pid = '" . $id . "'");
+								while($skill = mysql_fetch_array($skills)){
+									$skName = $skill["name"]; $image = $skill["image"]; ?>
+									<img src=<?php echo $image . " "; size(16.5, 16.5); ?> alt="<?php echo $skName; ?>" title="<?php echo $skName; ?>" />
+								<?php } ?>
+								</h4>
+							</div>
+						</div>
+							
+						<p>
 						<?php echo $desc; ?>
 						</p>
-						
-						<h4>Skills
-						<?php
-						$skills = mysql_query("SELECT DISTINCT * 
-											  FROM projects_skills, skills
-											  WHERE sid = id AND pid = '" . $id . "'");
-						while($skill = mysql_fetch_array($skills)){
-							$skName = $skill["name"]; $image = $skill["image"]; ?>
-							<img src=<?php echo $image . " "; size(21, 21); ?> alt="<?php echo $skName; ?>" title="<?php echo $skName; ?>" />
-						<?php } ?>
-						</h4>
 						
 						<?php if(strcmp($source, "REQUEST")){ ?>
 						<a href=<?php echo $source . "/archive/master.zip"; ?> class="ym-button ym-next" target="_blank">Download</a>

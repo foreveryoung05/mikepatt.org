@@ -13,8 +13,8 @@
 		$colCount = 1; $rowCount = 1; $color = "";
 		while($club = mysql_fetch_array($clubs)){ $oddCol = $colCount % 2; $oddRow = $rowCount % 2;
 			$id = $club["id"]; $name = $club["name"]; $sName = $club["sname"]; $desc = $club["desc"]; $link = $club["link"]; 
-			$start = sqlDate($club["start"]); $sString = $start["month"] . " " . $start["year"];
-			$end = sqlDate($club["end"]); $eString = is_array($end) ? $end["month"] . " " . $end["year"] : "Present"; 
+			$start = sqlDate($club["start"]); $sString = $start["msy"];
+			$end = sqlDate($club["end"]); $eString = is_array($end) ? $end["msy"] : "Present"; 
 			$side = $oddCol ? "ym-gl" : "ym-gr"; $boxSide = $oddCol ? "ym-gbox-left" : "ym-gbox-right";
 			$status = strcmp($sName, "WiCS") ? "Member" : "Honorary Member";
 			if($oddCol){ $color = $oddRow ? "" : "info"; ?>

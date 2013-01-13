@@ -22,12 +22,9 @@ function printDir($dir, $sort, $frame){
 	$revCount = $count = count($dirArray);
 	for($index = 0; $index < $count; $index++){
 		echo "<li>";
-		#echo "<a href='" . $dir . "/" . $dirArray[$index] . "' target='" . $frame . "'>";		
-		#echo "<a href='http://bit.ly/tp2012f" . $revCount-- . "' target='digital'>";
 		echo "<a href=\"#TheTP\" onclick=\"print.location.href='" . $dir . "/" . 		$dirArray[$index] . "',digital.location.href='http://bit.ly/tp2012f" . $revCount-- . "'\">";
-		echo substr($dirArray[$index], 0, -4);
+		echo substr(str_replace(" [","<br />[",$dirArray[$index]), 0, -4);
 		echo "</a>";
-		#echo "</a>";
 		echo "</li>";
 	}
 	return $dirArray;

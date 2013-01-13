@@ -30,3 +30,19 @@ table.no-table-border {
 div#main p {
     text-align: justify;
 }
+
+.left-text {
+    text-align: left;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.no-top-mar {
+    margin-top: 0px;
+}
+
+li {
+    text-align: justify;
+}
