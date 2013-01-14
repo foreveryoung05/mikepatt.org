@@ -31,7 +31,7 @@ function dhTable($place, $time){
 	
 	$tableSize = 0;
 	$tableArray = array();
-	$bad = array("<td width=\"0px\">Â&nbsp;</td>", "<br />");
+	$bad = array("<td width=\"15px\"></td>");
 	while(!strstr($file[$tableStart + $tableSize], "</table>")){
 		array_push($tableArray, str_replace($bad, "", $file[$tableStart + $tableSize])); $tableSize++;
 	}

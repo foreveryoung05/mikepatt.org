@@ -66,7 +66,13 @@
 						
 						<div class="ym-grid ym-equalize linearize-level-1">
 							<div class = "ym-g50 ym-gl">						
-								<h4 class="left-text no-top-mar"><?php echo $cnum . ", " . $term; ?></h4>
+								<h4 class="left-text no-top-mar">
+								<?php if(strcmp($cnum, "Indep.")){ ?>
+								<a href="courses.php#<?php echo $cnum; ?>"><?php echo $cnum; ?></a>,	
+								<?php } else { ?> 
+								<?php echo $cnum . ","; } ?>
+								<?php echo $term; ?>
+								</h4>
 							</div>
 							
 							<div class = "ym-g50 ym-gr">

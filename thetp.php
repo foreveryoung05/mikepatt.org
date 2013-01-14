@@ -1,5 +1,5 @@
 <?php $pageTitle="KCECH - The TP"; ?>
-<?php include('headerhtml.php') ?>
+<?php include('pennfood/header.php') ?>
 
 <?php 
 function getDirArray($dir){
@@ -70,4 +70,4 @@ function printDir($dir, $sort, $frame){
 	</div>
 </div>
 
-<?php include('footerhtml.php'); ?>
+<?php include('pennfood/footer.php'); ?>

@@ -9,7 +9,6 @@
 			<div class="tab-content ym-grid ym-equalize linearize-level-1">
 				<?php if(!$isWeekend){ ?>
 				<div class="ym-g33 ym-gl">
-					<br />
 					<?php dhTable($E, $L); ?>
 				</div>
 				<?php $size = "ym-g33"; } ?>
@@ -25,7 +24,6 @@
 			<div class="tab-content ym-grid ym-equalize linearize-level-1">
 				<?php if(!$isWeekend){ ?>
 				<div class="ym-g33 ym-gl">
-					<br />
 					<?php dhTable($E, $D); ?>
 				</div>
 				<?php } ?>
