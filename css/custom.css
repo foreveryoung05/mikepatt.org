@@ -46,3 +46,17 @@ div#main p {
 li {
     text-align: justify;
 }
+
+header h1, header h2 {
+    font-weight: normal;
+}
+
+header h1 {
+    margin-top: -.1em;
+    font-size: 100px;
+}
+
+header h2 {
+    top: -10px;
+    line-height: 60%;
+}

@@ -22,7 +22,7 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 												   FROM course
 												   WHERE term='" . $currSem . "' ORDER BY num");
 						while($row = mysql_fetch_array($currCourses)){ ?>
-							<li>
+							<li class="left-text">
 								<a href=<?php echo "courses.php#" . $row["num"]; ?>>
 								<?php echo $row["num"] . " - " . $row["name"]; ?>
 								</a>
