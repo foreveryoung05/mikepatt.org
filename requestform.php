@@ -33,7 +33,7 @@
 			<?php $projects = mysql_query("SELECT DISTINCT * 
 										  FROM projects ORDER BY start DESC");
 			while($project = mysql_fetch_array($projects)){
-				$id = $project["id"]; $name = $project["name"]; $sName = $project["sname"]; ?>
+				$id = $project["id"]; $name = $project["name"]; $sName = $project["sname"] . "poll"; ?>
 				<input type="checkbox" name="project[]" id="<?php echo $sName; ?>" value="<?php echo $name; ?>" />
 				<label for="project[]"><?php echo $name; ?></label><br />
 			<?php } ?>
