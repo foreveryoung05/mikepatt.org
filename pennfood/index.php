@@ -1,4 +1,4 @@
-<?php include('dhfunctions.php'); $size = "ym-g50"; $pageTitle = "Penn Dining";?>
+<?php include('dhfunctions.php'); $size = "ym-g50"; $pageTitle = "Penn Dining"; include('../functions.php'); ?>
 <?php include('header.php'); $day = getDay(); $isWeekend = (strcmp($day, "Sunday") && strcmp($day, "Saturday")) ? FALSE : TRUE; ?>
 
 <div id="main" class="ym-clearfix" role="main">

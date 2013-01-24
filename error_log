@@ -1,0 +1,7 @@
+[05-Jan-2013 05:53:58 America/New_York] PHP Fatal error:  Call to undefined function size() in /home/bripef/public_html/index.php on line 53
+[05-Jan-2013 05:54:38 America/New_York] PHP Fatal error:  Call to undefined function size() in /home/bripef/public_html/index.php on line 53
+[05-Jan-2013 05:54:52 America/New_York] PHP Fatal error:  Call to undefined function size() in /home/bripef/public_html/index.php on line 53
+[05-Jan-2013 05:55:39 America/New_York] PHP Fatal error:  Call to undefined function size() in /home/bripef/public_html/index.php on line 53
+[12-Jan-2013 17:50:52 America/New_York] PHP Fatal error:  Call to undefined function convertSem() in /home/bripef/public_html/index.php on line 15
+[12-Jan-2013 17:51:00 America/New_York] PHP Fatal error:  Call to undefined function convertSem() in /home/bripef/public_html/courses.php on line 14
+[12-Jan-2013 17:51:02 America/New_York] PHP Fatal error:  Call to undefined function convertSem() in /home/bripef/public_html/index.php on line 15

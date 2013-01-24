@@ -1,11 +1,4 @@
-<?php $srvRoot = $_SERVER["DOCUMENT_ROOT"]; 
-$retRoot = strcmp($srvRoot, "C:/Code/") ? "/" : "/mikepatt.org/"; 
-define("RT", $retRoot);
-function RT(){
-	global $retRoot;
-	echo $retRoot;
-}
-$navBar = 'nav/' . $pageTitle . 'bar.php'; ?>
+<?php $navBar = 'nav/' . $pageTitle . 'bar.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +23,6 @@ $navBar = 'nav/' . $pageTitle . 'bar.php'; ?>
 
 	<link href="<?php RT(); ?>pennfood/favicon.png" rel="icon" type="image/png">
 	<link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
-	<!--link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&amp;text=YAML4%20CSS%20Framework" rel="stylesheet" type="text/css"/-->
 	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700" rel="stylesheet" type="text/css">
 	<link href="<?php RT(); ?>css/layout.css" rel="stylesheet" type="text/css"/>
 	<link href="<?php RT(); ?>js/snippet/snippet.css" rel="stylesheet" type="text/css"/>

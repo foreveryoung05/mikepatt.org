@@ -33,4 +33,32 @@ function sqlDate($date){
 				"mdsy" => $month . " " . $day . " " . $sYear, "msy" => $month . " " . $sYear,);
 }
 
+
+function getDirArray($dir){
+	$dir2 = opendir($dir);
+	while ($fileName = readdir($dir2)){
+		if(substr("$fileName", 0, 1) != "."){
+			$dirArray[] = $fileName;	
+		}
+	} 
+	closedir($dir2);
+	return $dirArray;
+}
+
+function printDir($dir, $sort, $frame){
+	$dirArray = getDirArray($dir);
+	array_pop($dirArray);
+	if($sort == "r"){ rsort($dirArray); } else {}
+	$revCount = $count = count($dirArray);
+	for($index = 0; $index < $count; $index++){ ?>
+		<li>
+			<a href="#TheTP" onclick="print.location.href='<?php echo $dir . "/" . $dirArray[$index]; ?>',digital.location.href='http://bit.ly/tp2012f<?php echo $revCount--; ?>'">
+				<?php echo substr(str_replace(" [","<br />[",$dirArray[$index]), 0, -4); ?>
+			</a>
+		</li>
+	<?php
+	}
+	return $dirArray;
+}
+
 ?>

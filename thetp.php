@@ -1,33 +1,5 @@
 <?php $pageTitle="KCECH - The TP"; ?>
-<?php include('pennfood/header.php') ?>
-
-<?php 
-function getDirArray($dir){
-	$dir2 = opendir($dir);
-	while ($fileName = readdir($dir2)){
-		if(substr("$fileName", 0, 1) != "."){
-			$dirArray[] = $fileName;	
-		}
-	} 
-	closedir($dir2);
-	return $dirArray;
-}
-
-function printDir($dir, $sort, $frame){
-	$dirArray = getDirArray($dir);
-	array_pop($dirArray);
-	if($sort == "r"){ rsort($dirArray); } else {}
-	$revCount = $count = count($dirArray);
-	for($index = 0; $index < $count; $index++){
-		echo "<li>";
-		echo "<a href=\"#TheTP\" onclick=\"print.location.href='" . $dir . "/" . 		$dirArray[$index] . "',digital.location.href='http://bit.ly/tp2012f" . $revCount-- . "'\">";
-		echo substr($dirArray[$index], 0, -4);
-		echo "</a>";
-		echo "</li>";
-	}
-	return $dirArray;
-}
-?>
+<?php include('functions.php'); include('pennfood/header.php'); ?>
 
 <div id="main" class="ym-clearfix" role="main">
 	<div class="ym-wrapper">

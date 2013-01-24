@@ -56,6 +56,10 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 						<h3 class="center-text">Skills <span class="subh">Languages and Technologies</span></h3>
 						<div class="box info">
 						<table class="narrow no-table-border">
+							<thead>
+								<th style="border-bottom-width: 0px;">Skill</th>
+								<th style="border-bottom-width: 0px;">Learned From</th>
+							</thead>
 							<tbody>
 							<?php
 							$skills = mysql_query("SELECT DISTINCT * 
@@ -68,7 +72,7 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 									<img src=<?php echo $image . " "; size(21,21); ?> />
 									<?php echo $name; ?>
 								</td>
-								<td class="no-td-border">via</td>
+								<!--td class="no-td-border">via</td-->
 								<td class="no-td-border">
 									<?php $vias = mysql_query("SELECT DISTINCT * 
 															  FROM skills_via 

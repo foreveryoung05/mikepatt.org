@@ -1,33 +1,6 @@
-<?php $pageTitle="KCECH - The TP"; 
-include('header.php') ?>
+<?php $pageTitle="KCECH - The TP"; include('../functions.php'); 
+include('header.php'); ?>
 
-<?php 
-function getDirArray($dir){
-	$dir2 = opendir($dir);
-	while ($fileName = readdir($dir2)){
-		if(substr("$fileName", 0, 1) != "."){
-			$dirArray[] = $fileName;	
-		}
-	} 
-	closedir($dir2);
-	return $dirArray;
-}
-
-function printDir($dir, $sort, $frame){
-	$dirArray = getDirArray($dir);
-	array_pop($dirArray);
-	if($sort == "r"){ rsort($dirArray); } else {}
-	$revCount = $count = count($dirArray);
-	for($index = 0; $index < $count; $index++){ ?>
-		<li>
-		<a href="#TheTP" onclick="print.location.href='<?php echo $dir . "/" . $dirArray[$index]; ?>',digital.location.href='http://bit.ly/tp2012f<?php echo $revCount--; ?>'" style="padding-left: 2%;">
-		<?php echo substr(str_replace(" - ","<br />",$dirArray[$index]), 0, -4); ?>
-		</a>
-		</li>
-<?php }
-	return $dirArray;
-}
-?>
 <div id="main" class="ym-clearfix" role="main">
 	<div class="ym-grid ym-equalize">
 		<div class="ym-g19 ym-gl">

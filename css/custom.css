@@ -43,7 +43,7 @@ div#main p {
     margin-top: 0px;
 }
 
-li {
+li.box {
     text-align: justify;
 }
 
