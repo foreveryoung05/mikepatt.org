@@ -15,16 +15,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<meta name="keywords" content="Mike Patterson, Mike, Patterson, Merlin, University of Pennsylvania, UPenn, Penn, CIS, Computer Science, resume, mikepatt, mikepatt77, projects, courses, activities">
-	<meta name="description" content="The projects, courses, activities, and contact info of a science fiction writer with a knack for computer science.">
+	<meta name="description" content="The <?php echo $pageTitle; ?> page of a science fiction writer with a knack for computer science.">
 	<meta name="author" content="Mike Patterson">
 	<meta name="publisher" content="Mike Patterson">
-	<meta name="content-language" content="en">
 	<meta name="revisit-after" content="2 days">
 	<meta name="robots" content="index,nofollow">
 
 	<link href="<?php RT(); ?>img/favicon.png" rel="icon" type="image/png">
 	<link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
-	<!--link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&amp;text=YAML4%20CSS%20Framework" rel="stylesheet" type="text/css"/-->
 	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700" rel="stylesheet" type="text/css">
 	<link href="<?php RT(); ?>css/layout.css" rel="stylesheet" type="text/css"/>
 	<link href="<?php RT(); ?>js/snippet/snippet.css" rel="stylesheet" type="text/css"/>

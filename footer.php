@@ -32,32 +32,32 @@
 						<ul id="socialbar">
 							<li id="github">
 								<a target="_blank" href="http://www.github.com/mikepatt77">
-								<img src="./img/social/github.png">
+								<img src="./img/social/github.png" alt="GitHub">
 								</a>
 							</li>
 							<li id="linkedin">
 								<a target="_blank" href="http://www.linkedin.com/in/mikepatt">
-								<img src="./img/social/linkedin.png">
+								<img src="./img/social/linkedin.png" alt="LinkedIn">
 								</a>
 							</li>
 							<li id="blogger">
 								<a target="_blank" href="http://themerlinventure.blogspot.com">
-								<img src="./img/social/blogger.png">
+								<img src="./img/social/blogger.png" alt="Blogger">
 								</a>
 							</li>
 							<li id="facebook">
 								<a target="_blank" href="http://www.facebook.com/mikepatt77">
-								<img src="./img/social/facebook.png">
+								<img src="./img/social/facebook.png" alt="Facebook">
 								</a>
 							</li>
 							<li id="twitter">
 								<a target="_blank" href="http://twitter.com/mikepatt77">
-								<img src="./img/social/twitter.png">
+								<img src="./img/social/twitter.png" alt="Twitter">
 								</a>
 							</li>
 							<li id="googleplus">
 								<a target="_blank" href="https://plus.google.com/u/0/108237346095067915702">
-								<img src="./img/social/googleplus.png">
+								<img src="./img/social/googleplus.png" alt="Google Plus">
 								</a>
 							</li>
 						</ul>
@@ -80,6 +80,8 @@
 <script src="<?php RT(); ?>css/yaml/add-ons/syncheight/jquery.syncheight.js"></script>
 <script src="<?php RT(); ?>js/domscript.js"></script>
 <script src="<?php RT(); ?>js/overlay.js"></script>
+<script src="<?php RT(); ?>js/googleanalytics.js"></script>
+
 
 </body>
 </html>

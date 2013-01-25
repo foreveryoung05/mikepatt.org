@@ -57,8 +57,10 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 						<div class="box info">
 						<table class="narrow no-table-border">
 							<thead>
+								<tr>
 								<th style="border-bottom-width: 0px;">Skill</th>
 								<th style="border-bottom-width: 0px;">Learned From</th>
+								</tr>
 							</thead>
 							<tbody>
 							<?php
@@ -69,7 +71,7 @@ $navBar = 'nav/' . $pageTitle . 'bar.php';
 							?>
 							<tr>
 								<td class="no-td-border">
-									<img src=<?php echo $image . " "; size(21,21); ?> />
+									<img src=<?php echo $image . " "; size(21,21); ?> alt="<?php echo $name; ?>"/>
 									<?php echo $name; ?>
 								</td>
 								<!--td class="no-td-border">via</td-->

@@ -9,6 +9,7 @@
 <script src="<?php RT(); ?>css/yaml/add-ons/syncheight/jquery.syncheight.js"></script>
 <script src="<?php RT(); ?>js/domscript.js"></script>
 <script src="<?php RT(); ?>js/overlay.js"></script>
+<script src="<?php RT(); ?>js/googleanalytics.js"></script>
 
 </body>
 </html>
