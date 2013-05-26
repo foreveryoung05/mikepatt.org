@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name="alexaVerifyID" content="8GpsXUcaXho1gDud4VqiNKsv0ow" />
 	
 	<title>Mike Patterson &mdash; <?php echo $pageTitle; ?></title>
 

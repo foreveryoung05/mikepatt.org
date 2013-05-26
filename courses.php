@@ -65,9 +65,9 @@ function printSem($sem){
 							</div>
 						</div>
 					
-						<p>
+						<ul>
 						<?php echo $desc; ?>
-						</p>
+						</ul>
 
 					</div>
 				</div>

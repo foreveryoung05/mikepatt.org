@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html cis='455' page='search'>
+<head>
+    <title>Marksman Search</title>
+
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <meta name='keywords' content=''>
+    <meta name='description' content='A search engine built for CIS455 at the University of Pennsylvania'>
+    <meta name='author' content='Sunil Kumar, Mike Patterson, Adwoa Osei-Pianim, Nandini Raman'>
+    <meta name='publisher' content=''>
+    <meta name='revisit-after' content='2 days'>
+    <link href='favicon.png' rel='icon' type='image/png'/>
+    <link href='search.css' rel='stylesheet' type='text/css'/>
+    <!--link href='http://mikepatt.org/search/search.css' rel='stylesheet' type='text/css'/-->
+</head>
+
+<body>    
+<div id="floater"></div>
+<div id='wrapper'>
+<div class='container'>
+
+<header>
+    <h1 class='logo'>Marksman</h1>
+</header>
+<a href='results.html'>
+<div class='searchbar'>
+    <form method='get' action='results.html'>
+        <input type='hidden' name='start' value='0'>
+        <input type='hidden' name='stop' value='10'>
+        <input type='search' name='query' autocomplete='on' autofocus='on'>
+        <input type='submit' name='search' value='Search'>
+        <!--input type='submit' name='lucky' value='Lucky' formaction='lucky' formtarget='_blank'-->
+    </form>
+</div>
+</a>
+<div id='ipfinfo'>
+    <p>Your computer has the IP address: 127.0.0.1<br /> 
+    Which says that you are searching from '-' in the region '-' and country '-'</p>
+</div>
+   
+</div><!-- container -->
+</div><!-- wrapper --> 
+<footer>
+    <hr />
+    &copy; 2013 - Sunil Kumar, Mike Patterson, Adwoa Osei-Pianim, Nandini Raman
+</footer>
+</body>
+</html>

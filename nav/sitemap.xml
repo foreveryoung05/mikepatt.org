@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://mikepatt.org/</loc>
+</url>
+<url>
+  <loc>http://mikepatt.org/index.php</loc>
+</url>
+<url>
+  <loc>http://mikepatt.org/courses.php</loc>
+</url>
+<url>
+  <loc>http://mikepatt.org/projects.php</loc>
+</url>
+<url>
+  <loc>http://mikepatt.org/clubs.php</loc>
+</url>
+<url>
+  <loc>http://mikepatt.org/interests.php</loc>
+</url>
+
+<url>
+  <loc>http://mikepatt.org/thetp.php</loc>
+</url>
+<url>
+  <loc>http://mikepatt.org/pennfood/</loc>
+</url>
+<url>
+  <loc>http://mikepatt.org/pennfood/index.php</loc>
+</url>
+<url>
+  <loc>http://mikepatt.org/pennfood/thetpforkcech.php</loc>
+</url>
+
+<url>
+  <loc>http://themerlinventure.mikepatt.org/</loc>
+</url>
+<url>
+  <loc>http://kingscourses.mikepatt.org/</loc>
+</url>
+<url>
+  <loc>http://cqs.mikepatt.org/</loc>
+</url>
+
+</urlset>

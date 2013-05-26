@@ -89,9 +89,9 @@
 							</div>
 						</div>
 							
-						<p>
+						<ul>
 						<?php echo $desc; ?>
-						</p>
+						</ul>
 						
 						<?php if(strcmp($source, "REQUEST")){ ?>
 						<a href=<?php echo $source . "/archive/master.zip"; ?> class="ym-button ym-next" target="_blank">Download</a>

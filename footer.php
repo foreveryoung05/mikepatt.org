@@ -20,7 +20,7 @@
 				
 				<div class="ym-g33 ym-gl">
 					<div class="ym-gbox-left center-text">
-						<p>&copy; 2012 by <a href="http://www.mikepatt.org">Mike Patterson</a><br />
+						<p>&copy; 2012 by <a href="http://www.mikepatt.org/docs/resume.pdf" title="Resume">Mike Patterson</a><br />
 						Layout based on <a href="http://www.yaml.de">YAML</a>,<br />
 						licensed under <a href="http://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.</p>
 					</div>
