@@ -40,3 +40,7 @@
 
 /* import overlay styling */
 @import url(overlay.css);
+
+/* import fonts */
+@import url(fonts.css);
+

@@ -1,6 +1,6 @@
 <?php
-$srvRoot = $_SERVER["DOCUMENT_ROOT"]; 
-$retRoot = strcmp($srvRoot, "C:/Code/") ? "/" : "/mikepatt.org/"; 
+$srvRoot = $_SERVER["DOCUMENT_ROOT"];
+$retRoot = strcmp($srvRoot, "C:/Users/mikepatt/Code") ? "/" : "/mikepatt.org/"; 
 define("RT", $retRoot);
 
 function RT(){
@@ -18,15 +18,29 @@ function size($width, $height){
 }
 
 function sqlDate($date){
-	$monthDict = array("January" => "Jan.", "February" => "Feb.", "March" => "Mar.",
-					  "April" => "Apr.", "May" => "May", "June" => "Jun.",
-					  "July" => "Jul.", "August" => "Aug.", "September" => "Sep.",
-					  "October" => "Oct.", "November" => "Nov.", "December" => "Dec.");
-	$yearArray = mysql_fetch_array(mysql_query("SELECT YEAR('" . $date . "')"));
+	$yearArray = mysql_fetch_array(
+				 mysql_query(
+				 "SELECT YEAR('" . $date . "')"));
 	if($yearArray[0] == 9999) return "Present";
-	$monthArray = mysql_fetch_array(mysql_query("SELECT MONTHNAME('" . $date . "')"));
-	$dayArray = mysql_fetch_array(mysql_query("SELECT DAY('" . $date . "')"));
-	$day = $dayArray[0]; $month = $monthDict[$monthArray[0]]; $year = $yearArray[0];
+	$year = $yearArray[0];
+	
+	$monthDict = array(
+				"January"	=> "Jan."	, "February" 	=> "Feb.",
+				"March"		=> "Mar."	, "April" 		=> "Apr.",
+				"May"		=> "May"	, "June" 		=> "Jun.",
+				"July"		=> "Jul."	, "August"		=> "Aug.",
+				"September"	=> "Sep."	, "October"		=> "Oct.",
+				"November"	=> "Nov."	, "December"	=> "Dec.");
+	$monthArray = mysql_fetch_array(
+				  mysql_query(
+				  "SELECT MONTHNAME('" . $date . "')"));
+	$month = $monthDict[$monthArray[0]];
+	
+	$dayArray = mysql_fetch_array(
+				mysql_query(
+				"SELECT DAY('" . $date . "')"));
+	$day = $dayArray[0];  
+	
 	$sYear = " '" . substr($year, 2);
 	return array("day" => $day, "month" => $month, "year" => $year, "sYear" => $sYear,
 				"mdy" => $month . " " . $day . " " . $year, "my" => $month . " " . $year,
@@ -59,6 +73,6 @@ function printDir($dir, $sort, $frame){
 	<?php
 	}
 	return $dirArray;
-}
+}//*/
 
 ?>

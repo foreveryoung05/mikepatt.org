@@ -1,5 +1,9 @@
-<?php $navBar = 'nav/' . $pageTitle . 'bar.php'; ?>
-<?php include('mysql.php'); include('functions.php'); ?>
+<?php 
+$navBar = 'nav/' . $pageTitle . 'bar.php'; 
+include('mysql.php'); 
+include('/functions.php'); 
+include('0.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,10 +27,7 @@
 	<meta name="robots" content="index,nofollow">
 
 	<link href="<?php RT(); ?>img/favicon.png" rel="icon" type="image/png">
-	<link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
-	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700" rel="stylesheet" type="text/css">
-	<link href="<?php RT(); ?>css/layout.css" rel="stylesheet" type="text/css"/>
-	<link href="<?php RT(); ?>js/snippet/snippet.css" rel="stylesheet" type="text/css"/>
+	<?php cssLink("layout"); ?>
 </head>
 
 <body id="yaml-top" class="doc">
@@ -41,18 +42,6 @@
 
 <div id="intro">
 	Mike 'Merlin' Patterson - comp sci, sci fi, fyi
-</div>
+</div> <?php
 
-<?php include('topnavbar.php') ?>
-
-<header role="banner">
-	<div class="ym-wrapper">
-		<div class="ym-wbox">
-			<hgroup>
-				<h1 style="color:#FFFFFF;">Mike Patterson</h1>
-				<h2>COMPUTER SCIENTIST</h2>
-			</hgroup>
-			<p>A passionate coder with an interest in <em>startups</em>, <em>search</em> and <em>security</em></p>
-		</div>
-	</div>
-</header>
+include('topnavbar.php'); ?>
