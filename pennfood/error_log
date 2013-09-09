@@ -1,5 +1,0 @@
-[12-Jan-2013 18:01:58 America/New_York] PHP Fatal error:  Call to undefined function RT() in /home/bripef/public_html/pennfood/header.php on line 23
-[12-Jan-2013 18:02:03 America/New_York] PHP Fatal error:  Call to undefined function RT() in /home/bripef/public_html/pennfood/header.php on line 23
-[12-Jan-2013 18:03:11 America/New_York] PHP Fatal error:  Call to undefined function dhTable() in /home/bripef/public_html/pennfood/index.php on line 11
-[12-Jan-2013 18:03:19 America/New_York] PHP Fatal error:  Call to undefined function RT() in /home/bripef/public_html/pennfood/header.php on line 23
-[13-Jan-2013 04:15:31 America/New_York] PHP Fatal error:  Call to undefined function RT() in /home/bripef/public_html/pennfood/footer.php on line 2

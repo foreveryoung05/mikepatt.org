@@ -54,7 +54,7 @@ while($project = mysql_fetch_array($projects)){
 	$color = ($leftCol XOR $oddRow) ? "info" : "";
 	// begin row
 	if($leftCol){ ?>
-		<div class="ym-grid ym-equalize linearize-level-1"> <?php
+		<div class="ym-grid linearize-level-1"> <?php
 	} ?>
 			<!-- begin project region -->
 			<div class="ym-g50 <?php echo $side; ?>">

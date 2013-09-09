@@ -19,8 +19,8 @@ while($club = mysql_fetch_array($clubs)){
 	$sName		= $club["sname"];
 	$desc		= $club["desc"];
 	$link		= $club["link"]; 
-	$start		= getDateArray($club["start"])["msy"];
-	$end		= getDateArray($club["end"])["msy"];
+	$start		= getDateArray($club["start"]);	$start	= $start["msy"];
+	$end		= getDateArray($club["end"]);	$end	= $end["msy"];
 	
 	// set css div classes
 	$side 		= $leftCol ? "ym-gl" : "ym-gr"; 
@@ -31,7 +31,7 @@ while($club = mysql_fetch_array($clubs)){
 	$color = ($leftCol XOR $oddRow) ? "info" : "";
 	// begin row
 	if($leftCol){ ?>
-		<div class="ym-grid ym-equalize linearize-level-1"> <?php
+		<div class="ym-grid linearize-level-1"> <?php
 	} ?>
 			<!-- begin club region -->
 			<div class="ym-g50 <?php echo $side; ?>">

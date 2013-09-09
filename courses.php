@@ -3,26 +3,19 @@ $pageTitle="Courses";
 include('header.php');
 include($navBar);
 
-// beginMainWrapper(); ?>
+beginMainWrapper();
 
-<?php
-function printSem(){
+$terms = getTerms();
 
-/*
-$sem = "2013A";
-$semDict = convertSem($sem);
-$seas = $semDict["season"]; $year = $semDict["year"]; ?>
-<h2 id="<?php echo $seas . $year; ?>" tabindex="-1"><?php echo $seas . " '" . $year; ?></h2>
-*/
-$term = "2013A";
-$rTerm = readableTerm($term);
-echo $rTerm;
+while($term = mysql_fetch_array($terms)){
+$term = $term["term"];
+termH2($term);
 
-$courses = getCourses();
+$courses = getTermCourses($term);
 $colCount = 1;
 $rowCount = 1;
 $color = "";
-$cnumCourses = mysql_num_rows($courses);
+$numCourses = mysql_num_rows($courses);
 
 while($course = mysql_fetch_array($courses)) {
 	$leftCol	= $colCount % 2;
@@ -41,7 +34,7 @@ while($course = mysql_fetch_array($courses)) {
 	$color = ($leftCol XOR $oddRow) ? "info" : "";
 	// begin row
 	if($leftCol){ ?>
-		<div class="ym-grid ym-equalize linearize-level-1"> <?php
+		<div class="ym-grid linearize-level-1"> <?php
 	} ?>
 			<!-- begin course region -->
 			<div class="ym-g50 <?php echo $side; ?>">
@@ -59,31 +52,33 @@ while($course = mysql_fetch_array($courses)) {
 					<!-- begin course box -->
 					<div class="box <?php echo $color; ?>">
 						<div class="ym-grid ym-equalize linearize-level-1">
+							<!-- prereqs -->
 							<div class = "ym-g50 ym-gl">
 								<p class="no-top-mar">
 								<span class="label left-text">pre-reqs: <br /> <?php
 								$prereqs = getCoursePrereqs($cnum);
 								while($prereq = mysql_fetch_array($prereqs)) {
-									$prname = $prereq['prereq']; ?>
-									<?php if(isCourse($prname)){ ?>
-										&nbsp;&nbsp;<?php courseLink($prname); ?><br />
-									<?php } else{ ?>
-										&nbsp;&nbsp;<?php echo $prname; ?><br />
-								<?php }
+									$prname = $prereq['prereq'];
+									if(isCourse($prname)){ ?>
+										&nbsp;&nbsp;<?php courseLink($prname); ?><br /> <?php
+									} else{ ?>
+										&nbsp;&nbsp;<?php echo $prname; ?><br /> <?php
+									}
 								} ?>
 								</span>
 								</p>
 							</div>
 
-							<div class = "ym-g50 ym-gr">
-								<?php $skills = getCourseSkills($cnum);
+							<!-- skills -->
+							<div class = "ym-g50 ym-gr"> <?php
+								$skills = getCourseSkills($cnum);
 								if(mysql_num_rows($skills) != 0){ ?>
-								<h4 class="right-text no-top-mar">Skills
-								<?php while($skill = mysql_fetch_array($skills)){
-									$skName = $skill["name"]; $image = $skill["image"]; ?>
-									<img src=<?php echo $image . " "; size(21, 21); ?> alt="<?php echo $skName; ?>" title="<?php echo $skName; ?>" />
-								<?php } ?>
-								</h4><?php } ?>
+									<h4 class="right-text no-top-mar">Skills <?php
+									while($skill = mysql_fetch_array($skills)){
+										skillImage($skill, 21);
+									} ?>
+									</h4> <?php 
+								} ?>
 							</div>
 						</div>
 					
@@ -98,24 +93,14 @@ while($course = mysql_fetch_array($courses)) {
 			</div>
 			<!-- end course region --> <?php
 	// end row
-	if(!$leftCol || $colCount == $cnumCourses){
+	if(!$leftCol || $colCount == $numCourses){
 		$rowCount += 1; ?>
 		</div><?php
 	}
 	$colCount += 1;
 }
-
 }
 
-beginMainWrapper();
-printSem();
-/*
-	for($i = 2013; $i > 2008; $i--){
-		if($i < 2013)  printSem($i . "C");
-		if($i == 2010) printSem($i . "B");
-		if($i != 2009) printSem($i . "A");
-	}
-*/
 endMainWrapper();
 include('footer.php');
 ?>

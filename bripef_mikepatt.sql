@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 26, 2013 at 02:07 AM
--- Server version: 5.5.30-cll-lve
+-- Generation Time: Sep 07, 2013 at 03:26 PM
+-- Server version: 5.5.32-cll-lve
 -- PHP Version: 5.3.17
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -1151,21 +1151,23 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `start` date NOT NULL,
   `end` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `projects`
 --
 
 INSERT INTO `projects` (`id`, `name`, `sname`, `desc`, `team`, `source`, `view`, `start`, `end`) VALUES
-(1, 'LC4 Trace Generator', 'LC4Trace', 'A command line version of the LC4 assembly level simulator of PennSim. Takes in multiple object files as argument and outputs the trace to a file.', 1, 'REQUEST', 'NOVIEW', '2011-09-01', '2011-12-31'),
-(2, 'King''s Courses', 'KingsCourses', 'Using a food and drink database from Freebase, this project gives you recommendations not only for recipes but also for full course meals. And all this comes with a garnish of the social world.', 4, 'https://github.com/mikepatt77/kingscourses', 'http://kingscourses.mikepatt.org/', '2012-01-01', '2012-04-30'),
-(3, 'Superscalar Processor', 'SuperScalar', 'The superscalar version of the pipeline executes up to two instructions per cycle using the same five pipeline stages. It fetches, decodes, and executes up to two instructions per cycle, but with the limitation that only one load or store can execute per cycle. The following stages are implemented: fetch, decode, execute, memory, and writeback.', 3, 'REQUEST', 'NOVIEW', '2012-01-01', '2012-04-30'),
-(4, 'Scrabble', 'Scrabble', 'A command line based version of the classic Scrabble game. This game involves a 15 x 15 board with letter score and word score multipliers. Tiles that represent letters are then placed on the board from a rack of 7 tiles the player has by players to form words. Based on placement, the player who placed the word receives a certain number of points and more tiles from an initial set. The next player then repeats this on their turn. Play continues in this fashion until the initial set has no more tiles and a player uses his or her last tile.', 2, 'https://github.com/mikepatt77/scrabble', 'NOVIEW', '2011-01-01', '2011-04-30'),
-(5, 'Connect Four AI', 'Connect4AI', 'Your agent should use the minimax algorithm to determine the next move. The game space will be too large for you to construct the entire tree, and so your search tree will be limited in depth. To determine which move is best, you need to develop a static evaluator to be used in the leaves of your search tree. Remember that a static evaluator is a heuristic function that tells you approximately how good a given game board is for you. It is up to you to think of a good static evaluation function, which will have a large in uence on how well your algorithm performs. You are also encouraged to use other AI techniques beyond just minimax. For example, you might improve your algorithm by using alpha-beta pruning, or even a more advanced pruning technique. You can also make your static evaluator as complex as you wish. There will be a time/memory limit for each turn. I haven''t decided on what these will be yet, but as a rule you should be able to play against the machine in real-time.', 1, 'REQUEST', 'NOVIEW', '2012-09-01', '2012-12-31'),
-(6, 'Penn OS', 'PennOS', 'In this assignment you will implement PennOS, your own UNIX-like operating system. PennOS is designed around subsystems that model those of standard UNIX. This will include programming a basic priority scheduler, flat file system, and user shell interactions. Unlike a real operating system, you will not be required to actually boot on hardware; rather, your PennOS will run as a guest OS within a single process running on a host OS.', 5, 'REQUEST', 'NOVIEW', '2012-09-01', '2012-12-31'),
-(7, 'Coding Q''s', 'CodingQs', 'Coding Questions (CQs) is a database of technical interview questions and answers that users can browse to practice technical interviews. The user can up vote or down vote a question based on whether or not they think it is a good example, well specified, and other factors. The user can also rate how difficult they found a particular question. Users can also input their own questions into the database for further population and to help other users.', 1, 'https://github.com/mikepatt77/codingqs', 'http://cqs.mikepatt.org', '2012-09-01', '2012-12-31'),
-(8, 'Grey Bat Book Importer', 'GreyBat', 'GoodReads.com is an excellent website for tracking the books you have read, the ones you want to read, and so on. However if you''re like me, you may have been tracking your books yourself with a spreadsheet. GoodReads has its own importer, but unfortunately ISBN is required for it to work. And I doubt many people bothered to record the ISBN of books they read. So this will import books for you, and all it needs is a csv file with authors in the first column and titles in the second. It will even record the GoodReads ID and ISBN for you if you want it too.', 1, 'https://github.com/mikepatt77/bookimporter', 'NOVIEW', '2012-12-31', '2013-01-03');
+(1, 'LC4 Trace Generator', 'LC4Trace', '<li>Trace simulator of Penn''s LC4 assembly code\r\n</li><li>Option to run a video memory program\r\n</li><li>Learned to develop a sizable application with multiple components\r\n</li>', 1, 'REQUEST', 'NOVIEW', '2011-09-01', '2011-12-31'),
+(2, 'King''s Courses', 'KingsCourses', '<li>Recommends recipes based on the food you have\r\n</li><li>Optionally recommends meals (consisting of multiple recipes)\r\n</li><li>Learned to work with an arrogant team member\r\n</li>', 4, 'https://github.com/mikepatt77/kingscourses', 'http://kingscourses.mikepatt.org/', '2012-01-01', '2012-04-30'),
+(3, 'Superscalar Processor', 'SuperScalar', '<li>Processor that executes up to two instructions per cycle\r\n</li><li>Also has basic branch prediction\r\n</li><li>Learned to work with a non-active team member\r\n</li>', 3, 'REQUEST', 'NOVIEW', '2012-01-01', '2012-04-30'),
+(4, 'Scrabble', 'Scrabble', '<li>Textual version of the popular word game Scrabble\r\n</li><li>Option to play against human or AI player\r\n</li><li>Learned to code in a team\r\n</li>', 2, 'https://github.com/mikepatt77/scrabble', 'NOVIEW', '2011-01-01', '2011-04-30'),
+(5, 'Connect Four AI', 'Connect4AI', '<li>AI player for the popular game Connect Four\r\n</li><li>Utilized the mini-max algorithm for choosing moves\r\n</li><li>Learned about strategies of artificial intelligence\r\n</li>', 1, 'REQUEST', 'NOVIEW', '2012-09-01', '2012-12-31'),
+(6, 'Penn OS', 'PennOS', '<li>Unix-like operating system\r\n</li><li>Has a flat file system and priority scheduler\r\n</li><li>Learned to document all code\r\n</li>', 5, 'REQUEST', 'NOVIEW', '2012-09-01', '2012-12-31'),
+(7, 'Coding Q''s', 'CodingQs', '<li>An unfinished webapp that helps users with technical interviews\r\n</li><li>Has since evolved into the idea of my app in progress <a href=''#NoOne''>NoOne</a>\r\n</li><li>Learned that an app is always unfinished\r\n</li>', 1, 'https://github.com/mikepatt77/codingqs', 'http://cqs.mikepatt.org', '2012-09-01', '2012-12-31'),
+(8, 'GRimp (GoodReads importer)', 'GRimp', '<li><a href=''http://goodreads.com''>GoodReads.com</a> automatic book importer via CSV file\r\n</li><li>Option to export a file with GoodReads ID and ISBN\r\n</li><li>Learned to use RESTful APIs\r\n</li>', 1, 'https://github.com/mikepatt77/bookimporter', 'NOVIEW', '2012-12-31', '2013-01-03'),
+(9, 'Marksman Search Engine', 'Marksman', '<li>Parses a user query into terms, which are then sent to an index\r\n</li><li>The index returns ranked pages that have been crawled on the web that are relevant to the query\r\n</li><li>Learned to combine large components together\r\n</li>', 4, 'REQUEST', 'NOVIEW', '2013-01-01', '2013-04-30'),
+(10, 'Expresso', 'Expresso', '<li>Patients record daily journal entries with an Android app\r\n</li><li>Therapists view the entries with a Ruby on Rails app\r\n</li><li>Learned to work in an agile development process\r\n</li>', 4, 'REQUEST', 'NOVIEW', '2013-01-01', '2013-04-30');
 
 -- --------------------------------------------------------
 
@@ -1189,9 +1191,11 @@ INSERT INTO `projects_course` (`pid`, `cnum`) VALUES
 (7, 'CIS196'),
 (1, 'CIS240'),
 (2, 'CIS330'),
+(10, 'CIS350'),
 (3, 'CIS371'),
 (6, 'CIS380'),
 (5, 'CIS391'),
+(9, 'CIS455'),
 (8, 'NONUM');
 
 -- --------------------------------------------------------
@@ -1215,6 +1219,8 @@ INSERT INTO `projects_skills` (`pid`, `sid`) VALUES
 (4, 1),
 (5, 1),
 (8, 1),
+(9, 2),
+(10, 2),
 (1, 3),
 (6, 3),
 (7, 5),
@@ -1227,7 +1233,8 @@ INSERT INTO `projects_skills` (`pid`, `sid`) VALUES
 (7, 8),
 (2, 9),
 (2, 10),
-(3, 11);
+(3, 11),
+(10, 15);
 
 -- --------------------------------------------------------
 
@@ -1286,19 +1293,19 @@ CREATE TABLE IF NOT EXISTS `skills` (
 INSERT INTO `skills` (`id`, `name`, `top`, `image`) VALUES
 (1, 'Python', 1, ' ./img/skills/python.gif'),
 (2, 'Java', 2, ' ./img/skills/java.jpg'),
-(3, 'C', 3, ' ./img/skills/c.jpg'),
-(4, 'C++', 4, ' ./img/skills/cpp.png'),
-(5, 'Ruby on Rails', 5, ' ./img/skills/ruby.png'),
-(6, 'Git', 6, ' ./img/skills/git.png'),
-(7, 'HTML', 7, ' ./img/skills/html.png'),
-(8, 'CSS', 8, ' ./img/skills/css.jpg'),
-(9, 'mySQL', 9, ' ./img/skills/mysql.jpg'),
-(10, 'PHP', 10, './img/skills/php.jpg'),
-(11, 'Verilog', 11, './img/skills/verilog.gif'),
-(12, 'Haskell', 12, './img/skills/haskell.png'),
-(13, 'Linux', 13, './img/skills/linux.png'),
-(14, 'QBasic', 14, './img/skills/qbasic.jpg'),
-(15, 'Android', 11, './img/skills/android.png');
+(3, 'C', 9, ' ./img/skills/c.jpg'),
+(4, 'C++', 12, ' ./img/skills/cpp.png'),
+(5, 'Ruby on Rails', 11, ' ./img/skills/ruby.png'),
+(6, 'Git', 7, ' ./img/skills/git.png'),
+(7, 'HTML', 5, ' ./img/skills/html.png'),
+(8, 'CSS', 6, ' ./img/skills/css.jpg'),
+(9, 'mySQL', 4, ' ./img/skills/mysql.jpg'),
+(10, 'PHP', 3, './img/skills/php.jpg'),
+(11, 'Verilog', 14, './img/skills/verilog.gif'),
+(12, 'Haskell', 15, './img/skills/haskell.png'),
+(13, 'Linux', 8, './img/skills/linux.png'),
+(14, 'QBasic', 13, './img/skills/qbasic.jpg'),
+(15, 'Android', 10, './img/skills/android.png');
 
 -- --------------------------------------------------------
 
@@ -1329,6 +1336,7 @@ INSERT INTO `skills_via` (`sid`, `cnum`, `siteid`) VALUES
 (2, 'CIS110', 99),
 (2, 'CIS120', 99),
 (2, 'CIS121', 99),
+(2, 'CIS350', 99),
 (2, 'CIS455', 99),
 (3, 'CIS240', 99),
 (3, 'CIS380', 99),
@@ -1337,7 +1345,9 @@ INSERT INTO `skills_via` (`sid`, `cnum`, `siteid`) VALUES
 (6, 'CIS380', 99),
 (9, 'CIS330', 99),
 (10, 'CIS330', 99),
-(11, 'CIS371', 99);
+(11, 'CIS371', 99),
+(13, 'CIS191', 99),
+(15, 'CIS350', 99);
 
 --
 -- Constraints for dumped tables

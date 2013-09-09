@@ -1,19 +1,6 @@
 <?php
 $pageTitle="Home"; 
-include('header.php');
-include($navBar); ?>
-
-<header role="banner">
-	<div class="ym-wrapper">
-		<div class="ym-wbox">
-			<hgroup>
-				<h1 style="color:#FFFFFF;">Mike Patterson</h1>
-				<h2>COMPUTER SCIENTIST</h2>
-			</hgroup>
-			<p>A passionate coder with an interest in <em>startups</em>, <em>search</em> and <em>security</em></p>
-		</div>
-	</div>
-</header> <?php
+include('header.php'); 
 
 beginMainWrapper(); ?>
 		

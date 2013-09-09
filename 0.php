@@ -1,13 +1,8 @@
 <?php
 // general functions
-//$srvRoot = $_SERVER["DOCUMENT_ROOT"];
-//$retRoot = ($srvRoot !== "C:/Users/mikepatt/Code") ? "/" : "/mikepatt.org/"; 
-//define("RT", $retRoot);
-
-function RoT(){
-	global $retRoot;
-	echo $retRoot;
-}
+$srvRoot = $_SERVER["DOCUMENT_ROOT"];
+$retRoot = ($srvRoot !== "C:/Users/mikepatt/Code") ? "/" : "/mikepatt.org/"; 
+define("RT", $retRoot);
 
 function anchor($sName){ ?>
 	<span class="anchor" id="<?php echo $sName; ?>"></span> <?php
@@ -21,6 +16,10 @@ function cssLink($name){
 function jsLink($name){
 	$path = RT . "js/" . $name . ".js"; ?>
 	<script src="<?php echo $path; ?>"></script> <?php
+}
+
+function inPageLink($sName, $name){ ?>
+	<a href="#<?php echo $sName; ?>"><?php echo $name; ?></a> <?php
 }
 
 function beginMainWrapper(){ ?>
@@ -46,12 +45,12 @@ function getYear($date){
 
 function getMonth($date){
 	$monthDict = array(
-				"January"	=> "Jan."	, "February" 	=> "Feb.",
-				"March"		=> "Mar."	, "April" 		=> "Apr.",
-				"May"		=> "May"	, "June" 		=> "Jun.",
-				"July"		=> "Jul."	, "August"		=> "Aug.",
-				"September"	=> "Sep."	, "October"		=> "Oct.",
-				"November"	=> "Nov."	, "December"	=> "Dec.");
+		"January"	=> "Jan."	, "February" 	=> "Feb.",
+		"March"		=> "Mar."	, "April" 		=> "Apr.",
+		"May"		=> "May"	, "June" 		=> "Jun.",
+		"July"		=> "Jul."	, "August"		=> "Aug.",
+		"September"	=> "Sep."	, "October"		=> "Oct.",
+		"November"	=> "Nov."	, "December"	=> "Dec.");
 	$monthArray = mysql_fetch_array(
 				  mysql_query(
 				  "SELECT MONTHNAME('" . $date . "')"));
@@ -217,6 +216,11 @@ function isCourse($string){
 	return false;
 }
 
+// has same logic as isCourse and is thus a wrapper for it
+function isReadableTerm($string){
+	return isCourse($string);
+}
+
 function getCourseTerm($cnum){
 	$termArray = mysql_fetch_array(
 				 mysql_query(
@@ -227,11 +231,26 @@ function getCourseTerm($cnum){
 	return $termArray["term"];
 }
 
+function getTermCourses($term){
+	return mysql_query(
+		"SELECT DISTINCT *
+		FROM course
+		WHERE term='" . $term . "' ORDER BY num ASC");
+}
+
+function getTerms(){
+	return mysql_query(
+		"SELECT DISTINCT term
+		FROM course
+		WHERE term != 'NONE'
+		ORDER BY term DESC");
+}
+
 function readableTerm($cOrT){ // course or term
 	$seasDict = array(
-				"A" => "Spring", 
-				"B" => "Summer", 
-				"C" => "Fall");
+		"A" => "Spring", 
+		"B" => "Summer", 
+		"C" => "Fall");
 	$term = isCourse($cOrT) ? getCourseTerm($cOrT) : $cOrT;
 	$season = $seasDict[substr($term, -1)];
 	$year = substr($term, -3, 2);
@@ -239,12 +258,16 @@ function readableTerm($cOrT){ // course or term
 	return $season . " '" . $year; 
 }
 
-function termToID($term){
-
+function termID($term){
+	if(!isReadableTerm($term))
+		$term = readableTerm($term);
+	return str_replace(" '", "", $term);
 }
 
-function termLink($term){ ?>
-	<a href=""></a> <?php
+function termH2($term){ 
+	$rTerm	= readableTerm($term); 
+	$id		= termID($rTerm); ?>
+	<h2 id="<?php echo $id; ?>" tabindex="-1"><?php echo $rTerm; ?></h2> <?php
 }
 
 function getCoursePrereqs($cnum){
@@ -277,5 +300,73 @@ function getClubRoles($id){
 }
 
 // interest functions
+function initFrame($name, $type){ 
+	$name = substr($name, 0, -3); ?>
+	<iframe name="<?php echo $type; ?>" width="100%" height="500" src="<?php echo RT . "penn/tp/" . $type . "/" . $name . $type; ?>"></iframe> <?php
+}
 
+function tpLink($file){
+	$date = substr($file, 0, 10); 
+	$name = substr($file, 0, -4); ?>
+	<a href="#TheTP" onclick="
+	pdf.location.href='<?php echo RT . "penn/tp/pdf/" . $file; ?>',
+	htm.location.href='<?php echo RT . "penn/tp/htm/" . $name . ".htm"; ?>'"> <?php
+		echo $name; ?>
+	</a> <?php
+}
+
+function getDirArray($name){
+	$dir = opendir($name);
+	while ($file = readdir($dir)){
+		if(!is_dir($file))
+			$dirArray[] = $file;
+	} 
+	closedir($dir);
+	
+	return $dirArray;
+}
+
+function printDir($name){
+	$dirArray = getDirArray($name);
+	rsort($dirArray);
+	$max = count($dirArray);
+	for($i = 0; $i < $max; $i++){ ?>
+		<li> <?php
+			tpLink($dirArray[$i]); ?>
+		</li> <?php
+	}
+	
+	return $dirArray;
+}
+
+function tpContent($path, $lSize = "ym-g25", $rSize = "ym-g75"){ ?>
+<div class="ym-grid ym-equalize">
+	<div class="<?php echo $lSize; ?> ym-gl">
+		<div class="ym-gbox-left">
+			<div class="nav-wrapper">
+				<nav class="ym-vlist">
+					<h4 class="ym-vtitle">Editions</h4>
+					<ul> <?php
+						$dirArray = printDir($path); ?>		
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<div class="<?php echo $rSize; ?> ym-gr">
+		<div class="ym-gbox-right">
+			<div class="jquery_tabs">
+				<h5 id="printTab" class="tabhead" tabindex="-1">Print</h5>
+				<div class="tab-content">
+					<?php initFrame($dirArray[0], "pdf"); ?>
+				</div>
+				<h5 id="digitalTab" class="tabhead" tabindex="-1">Digital</h5>
+				<div class="tab-content">
+					<?php initFrame($dirArray[0], "htm"); ?>
+				</div>
+			</div>
+		</div>
+	</div></div> <?php
+}
 ?>
