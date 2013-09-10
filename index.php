@@ -7,12 +7,14 @@ beginMainWrapper(); ?>
 <div class="ym-grid linearize-level-1">
 	<!-- begin current courses -->
 	<div class="ym-g33 ym-gl">
-		<div class="ym-gbox-left">
-			<h3 class="center-text">Current Courses <span class="subh">Spring '13</span></h3>
+		<div class="ym-gbox-left"> <?php
+			$term = mysql_fetch_array(getTerms()); $term = $term["term"]; ?>
+			<h3 class="center-text">
+				Current Courses <span class="subh"><?php echo readableTerm($term); ?></span>
+			</h3>
 			<div class="box info">
-			<ul>
-			<?php
-			$currCourses = getCourses("2013A");
+			<ul> <?php
+			$currCourses = getCourses($term);
 			while($course = mysql_fetch_array($currCourses)){ ?>
 				<li class="left-text"> <?php
 					courseLink($course["num"]);
